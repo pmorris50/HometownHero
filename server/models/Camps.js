@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const { Schema } = require('mongoose');
-const camperSchema = require('./Camper')
+const {Camper} = require('./index.js')
 
 const campSchema = new Schema ({
     title: {
@@ -22,7 +22,7 @@ const campSchema = new Schema ({
         type: Number,
         required: true,
     },
-    campers: [camperSchema]
+    campers: [Camper]
 })
 const Camp = mongoose.model('Camp', campSchema);
   
