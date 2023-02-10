@@ -34,7 +34,8 @@ const userSchema = new Schema({
     },
     adminAccess: {
         type: Boolean,
-        required: true
+        required: true,
+        default: false,
     },
     
     campers: [Campers.Schema]

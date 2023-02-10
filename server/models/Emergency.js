@@ -14,7 +14,7 @@ const emergencySchema = new Schema ({
         trim: true
     },
     phoneNumber1: {
-        type: Number,
+        type: String,
         required: true,
         validate: {
             validator: function(phoneNumber) {
@@ -24,11 +24,11 @@ const emergencySchema = new Schema ({
         }
     },
     phoneNumber2: {
-        type: Number,
+        type: String,
         required: true,
         validate: {
             validator: function(phoneNumber) {
-                return /^$/.test(phoneNumber);
+                return /^(\d{3}[-\.\s]??\d{3}[-\.\s]??\d{4}|\(\d{3}\)\s*\d{3}-\d{4})$/.test(phoneNumber);
             },
             message: `${this.phoneNumber} is not a valid phone number!`
         }
