@@ -4,8 +4,8 @@ import React, {useState} from 'react';
 import About from './about';
 import Shop from './shop'
 //render header and footer
-import footer from '../components/footer'
-import header from '../components/header'
+import Footer from '../components/footer';
+import Header from '../components/header';
 
 
 export default function WebsiteContainer(){
@@ -19,15 +19,16 @@ export default function WebsiteContainer(){
             return <About/>;
         }
         if(currentPage === 'Shop') {
-
+            return <Shop/>
         }
     };
 
 const handlePageChange = (page) => setCurrentPage(page);
     return (
         <div>
-
+           
             {renderPage()}
+            
         </div>
     )
 
