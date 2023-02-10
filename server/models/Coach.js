@@ -1,1 +1,0 @@
-DB_EMAIL = 'patrickmorris532@gmail.com';
