@@ -12,5 +12,9 @@
     "build": "cd client && npm run build"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.1.0"
+
+  }
 }
