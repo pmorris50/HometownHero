@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
-const { Schema, model } = mongoose;
+const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
-const camperSchema = require('./Camper')
+const camperSchema  = require('./Camper');
 
 const userSchema = new Schema({
     firstName: {
@@ -39,7 +39,7 @@ const userSchema = new Schema({
     },
     
     campers: [camperSchema]
-})
+});
 
 // set up pre-save middleware to create password
 userSchema.pre('save', async function(next) {
@@ -56,7 +56,7 @@ userSchema.methods.isCorrectPassword = async function(password) {
     return await bcrypt.compare(password, this.password);
   };
   
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model('user', userSchema);
   
 module.exports = User;
   

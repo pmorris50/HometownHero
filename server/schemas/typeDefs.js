@@ -10,11 +10,11 @@ const typeDefs = gql`
     campers: [Camper]
     }
 
-    type Camps {
+    type Camp {
     _id: ID
     title: String!
     location: String!
-    date: Date!
+    date: String!
     price: Float!
     campers: [Camper]
     }
@@ -23,12 +23,12 @@ const typeDefs = gql`
     _id: ID
     firstName: String!
     lastName: String!
-    age: Number!
-    gradeFinished: Number!
+    age: Int!
+    gradeFinished: Int!
     tshirtSize: String!
     emergencyContact: [Emergency]
     waiverSigned: Boolean!
-    campId: [Camps_id]
+    campId: Camp
     }
 
     type Emergency {
@@ -39,13 +39,13 @@ const typeDefs = gql`
     phoneNumber2: String!
     }
 
-    type Products {
+    type Product {
     _id: ID
     name: String!
     description: String
     image: String
     price: Float!
-    quantity: Number
+    quantity: Int!
     }
 
     type Order {
@@ -62,6 +62,7 @@ const typeDefs = gql`
     type Query {
     user: User
     camps: [Camp]
+    camp(_id: ID!): Camp
     camper: [Camper]
     emergency: [Emergency]
     order(_id: ID!): Order
