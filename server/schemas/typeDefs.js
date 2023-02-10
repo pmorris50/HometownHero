@@ -7,7 +7,7 @@ const typeDefs = gql`
     lastName: String!
     email: String!
     adminAccess: Boolean!
-    campers: [Campers]
+    campers: [Camper]
     }
 
     type Camps {
@@ -16,7 +16,7 @@ const typeDefs = gql`
     location: String!
     date: Date!
     price: Float!
-    campers: [Campers]
+    campers: [Camper]
     }
 
     type Camper {
