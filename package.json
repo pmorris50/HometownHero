@@ -12,5 +12,8 @@
     "build": "cd client && npm run build"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "react-modal-wrap": "^0.1.3"
+  }
 }
