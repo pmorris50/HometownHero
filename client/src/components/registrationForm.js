@@ -24,5 +24,11 @@ const registrationForm = () => {
     const [ShowModal, setShowModal] = useState(false)
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
+
+    return (
+        <div>
+            
+        </div>
+    )
     
 }
