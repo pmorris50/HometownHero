@@ -35,7 +35,6 @@ const emergencySchema = new Schema ({
     }
 
 })
-const Emergency = mongoose.model('Emergency', emergencySchema);
 
-module.exports = Emergency;
+module.exports = emergencySchema;
 

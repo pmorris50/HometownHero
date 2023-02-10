@@ -28,7 +28,7 @@ const typeDefs = gql`
     tshirtSize: String!
     emergencyContact: [Emergency]
     waiverSigned: Boolean!
-    campId: [Camps._id]
+    campId: [Camps_id]
     }
 
     type Emergency {
@@ -64,7 +64,7 @@ const typeDefs = gql`
     camps: [Camp]
     camper: [Camper]
     emergency: [Emergency]
-    product(_id: ID!): Product
+    order(_id: ID!): Order
     }
      
     type mutations {

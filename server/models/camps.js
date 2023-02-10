@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const { Schema } = require('mongoose');
+const camperSchema = require('./Camper')
 
 const campSchema = new Schema ({
     title: {
@@ -21,7 +22,7 @@ const campSchema = new Schema ({
         type: Number,
         required: true,
     },
-    campers: [Campers.Schema]
+    campers: [camperSchema]
 })
 const Camp = mongoose.model('Camp', campSchema);
   

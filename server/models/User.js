@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema, model } = mongoose;
 const bcrypt = require('bcrypt');
-const Campers = require('./Camper')
+const camperSchema = require('./Camper')
 
 const userSchema = new Schema({
     firstName: {
@@ -38,7 +38,7 @@ const userSchema = new Schema({
         default: false,
     },
     
-    campers: [Campers.Schema]
+    campers: [camperSchema]
 })
 
 // set up pre-save middleware to create password

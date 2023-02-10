@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-const { Schema } = require('mongoose');
-const Emergency = require('./Emergency')
+const { Schema } = mongoose;
+const emergencySchema = require('./Emergency')
 
 const camperSchema = new Schema({
     firstName: {
@@ -27,7 +27,7 @@ const camperSchema = new Schema({
         required: true,
         trim: true
     },
-    emergencyContact: [Emergency.Schema],
+    emergencyContact: [emergencySchema],
 
     waiverSigned: {
         type: Boolean,
@@ -40,6 +40,7 @@ const camperSchema = new Schema({
         }
     ]
 })
-const Camper = mongoose.model('Camper', camperSchema);
+// const Camper = mongoose.model('Camper', camperSchema);
 
-module.exports = Camper;
+module.exports =  camperSchema;
+
