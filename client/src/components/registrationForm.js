@@ -24,11 +24,17 @@ const registrationForm = () => {
     const [ShowModal, setShowModal] = useState(false)
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
+    const [age, setAge] = useState("");
+    const [gradeFinished, setGradeFinished] = useState("")
+    const [tshirtSize, settshirtSize] = useState("")
 
     return (
         <div>
             
+            <Waiver/>
         </div>
     )
     
 }
+
+export default registrationForm

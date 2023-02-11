@@ -24,12 +24,13 @@ const Modal = ({children, showModal, setShowModal}) => {
 
 const Waiver = () => {
   const [showModal, setShowModal] = useState(false)
-  const [fullName, setFullName] = useState("");
-  const [parentName, setParentName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("")
+  const [parentFirstName, setParentFirstName] = useState("")
+  const [parentLastName, setParentLastName] = useState();
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [emergencyContactName, setEmergencyContactName] = useState("");
-  const [emergencyContactPhone, setEmergencyContactPhone] = useState("");
+  const [phoneNumber1, setPhoneNumber1] = useState("");
+  const [phoneNumber2, setPhoneNumber2] = useState("")
   const [agreed, setAgreed] = useState(false);
 
   const handleSubmit = (event) => {
@@ -44,7 +45,7 @@ const Waiver = () => {
     <form onSubmit={handleSubmit}>
       <h2>Youth Sports Camp Waiver</h2>
       <p>
-        I, <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />, 
+        I, <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />, 
         as the parent or legal guardian of the participating youth, 
         do hereby release and hold harmless the Youth Sports Camp and its officers, directors, 
         employees, and agents from any and all claims, demands, damages, or rights of action, 
@@ -52,19 +53,25 @@ const Waiver = () => {
         including death, that may be sustained by the participating youth while participating in the camp activities.
       </p>
       <p>
-        Parent/Guardian Name: <input type="text" value={parentName} onChange={(e) => setParentName(e.target.value)} />
+        Camper First Name: <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+      </p>
+      <p>
+        Camper Last Name: <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+      </p>
+      <p>
+        Parent/Guardian  First Name: <input type="text" value={parentFirstName} onChange={(e) => setParentFirstName(e.target.value)} />
+      </p>
+      <p>
+        Parent/Guardian  Last Name: <input type="text" value={parentLastName} onChange={(e) => setParentLastName(e.target.value)} />
       </p>
       <p>
         Email: <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
       </p>
       <p>
-        Phone: <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} />
+        Phone: <input type="tel" value={phoneNumber1} onChange={(e) => setPhoneNumber1(e.target.value)} />
       </p>
       <p>
-        Emergency Contact Name: <input type="text" value={emergencyContactName} onChange={(e) => setEmergencyContactName(e.target.value)} />
-      </p>
-      <p>
-        Emergency Contact Phone: <input type="tel" value={emergencyContactPhone} onChange={(e) => setEmergencyContactPhone(e.target.value)} />
+       Alternate Phone: <input type="tel" value={phoneNumber2} onChange={(e) => setPhoneNumber2(e.target.value)} />
       </p>
       <p>
         <input type="checkbox" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} />
