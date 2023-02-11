@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema, model } = mongoose;
 const bcrypt = require('bcrypt');
-const camperSchema = require('./Camper')
+const camperSchema = require('./index.js')
 
 const userSchema = new Schema({
     firstName: {

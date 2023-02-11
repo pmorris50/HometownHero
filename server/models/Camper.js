@@ -40,6 +40,6 @@ const camperSchema = new Schema({
         }
     ]
 })
-const Camper = mongoose.model('Camper', camperSchema);
+// const Camper = mongoose.model('Camper', camperSchema);
 
-module.exports =  Camper
+module.exports =  camperSchema
