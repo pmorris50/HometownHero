@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
-const { Schema } = require('mongoose');
-const {Camper} = require('./index.js')
+const { Schema, model } = require('mongoose');
 
 const campSchema = new Schema ({
     title: {
@@ -22,9 +21,14 @@ const campSchema = new Schema ({
         type: Number,
         required: true,
     },
-    campers: [Camper]
+    campers: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'camper'
+        }
+    ]
 })
-const Camp = mongoose.model('Camp', campSchema);
+const Camp = mongoose.model('camp', campSchema);
   
 module.exports = Camp;
   

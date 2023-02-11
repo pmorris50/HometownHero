@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const { Schema } = require('mongoose');
+const { Schema, model } = mongoose;
 
 const emergencySchema = new Schema ({
     firstName: {
@@ -32,9 +32,11 @@ const emergencySchema = new Schema ({
             },
             message: `${this.phoneNumber} is not a valid phone number!`
         }
-    }
+    },
 
-})
+});
 
-module.exports = emergencySchema;
+const Emergency = mongoose.model('emergency', emergencySchema);
+
+module.exports = Emergency;
 
