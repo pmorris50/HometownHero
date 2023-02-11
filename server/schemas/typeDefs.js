@@ -6,6 +6,7 @@ const typeDefs = gql`
     firstName: String!
     lastName: String!
     email: String!
+    password: String!
     adminAccess: Boolean!
     campers: [Camper]
     }
@@ -60,7 +61,8 @@ const typeDefs = gql`
     }
 
     type Query {
-    user: User
+    user(_id: ID!): User
+    users: [User]
     camps: [Camp]
     camp(_id: ID!): Camp
     camper: [Camper]
@@ -68,10 +70,11 @@ const typeDefs = gql`
     order(_id: ID!): Order
     }
      
-    type mutations {
-    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+    type Mutation {
+    signUp(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     addOrder(products: [ID]!): Order
     login(email: String!, password: String!): Auth
+
     }
 `;
 

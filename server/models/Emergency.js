@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const { Schema } = mongoose;
+const { Schema, model } = mongoose;
 
 const emergencySchema = new Schema ({
     firstName: {
@@ -36,5 +36,7 @@ const emergencySchema = new Schema ({
 
 });
 
-module.exports = emergencySchema;
+const Emergency = mongoose.model('emergency', emergencySchema);
+
+module.exports = Emergency;
 
