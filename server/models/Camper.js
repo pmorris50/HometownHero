@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+//const mongoose = require('mongoose');
 
-const { Schema } = mongoose;
+const { Schema, model } = require('mongoose');
 const emergencySchema = require('./Emergency')
 
 const camperSchema = new Schema({
@@ -40,6 +40,6 @@ const camperSchema = new Schema({
         }
     ]
 })
-const Camper = mongoose.model('Camper', camperSchema);
+const Camper = model('Camper', camperSchema);
 
 module.exports =  Camper

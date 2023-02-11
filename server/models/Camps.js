@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+//const mongoose = require('mongoose');
 
-const { Schema } = require('mongoose');
+const { Schema, model } = require('mongoose');
 const {Camper} = require('./index.js')
 
 const campSchema = new Schema ({
@@ -24,7 +24,7 @@ const campSchema = new Schema ({
     },
     campers: [Camper]
 })
-const Camp = mongoose.model('Camp', campSchema);
+const Camp = model('Camp', campSchema);
   
 module.exports = Camp;
   

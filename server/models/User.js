@@ -1,8 +1,9 @@
-const mongoose = require('mongoose');
+//const mongoose = require('mongoose');
 
-const { Schema, model } = mongoose;
+const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
-const camperSchema = require('./Camper')
+const camperSchema = require('./Camper');
+const Camper = require('./index')
 
 const userSchema = new Schema({
     firstName: {
@@ -37,26 +38,32 @@ const userSchema = new Schema({
         required: true,
         default: false,
     },
-    
-    campers: [camperSchema]
+    campers: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Camper'
+        }
+    ]
+    //campers: [{ type: [Camper.schema], required: true}]
+    //campers: [camperSchema]
 })
 
 // set up pre-save middleware to create password
-userSchema.pre('save', async function(next) {
-    if (this.isNew || this.isModified('password')) {
-      const saltRounds = 10;
-      this.password = await bcrypt.hash(this.password, saltRounds);
-    }
+// userSchema.pre('save', async function(next) {
+//     if (this.isNew || this.isModified('password')) {
+//       const saltRounds = 10;
+//       this.password = await bcrypt.hash(this.password, saltRounds);
+//     }
   
-    next();
-  });
+//     next();
+//   });
   
-  // compare the incoming password with the hashed password
-userSchema.methods.isCorrectPassword = async function(password) {
-    return await bcrypt.compare(password, this.password);
-  };
+//   // compare the incoming password with the hashed password
+// userSchema.methods.isCorrectPassword = async function(password) {
+//     return await bcrypt.compare(password, this.password);
+//   };
   
-const User = mongoose.model('User', userSchema);
+const User = model('User', userSchema);
   
 module.exports = User;
   
