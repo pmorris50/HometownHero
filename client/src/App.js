@@ -49,6 +49,7 @@ function App() {
     <div className="App">
       <ApolloProvider client={client}>
         <Login/>
+        <Footer/>
       </ApolloProvider>
     </div>
   );
