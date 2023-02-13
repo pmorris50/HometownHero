@@ -35,3 +35,91 @@ export const MUTATION_LOGIN = gql`
     }
   }
 `;
+
+export const MUTATION_ADD_CAMP = gql`
+  mutation AddCamp($title: String!, $location: String!, $date: String!, $price: Float!) {
+  addCamp(title: $title, location: $location, date: $date, price: $price) {
+    _id
+    campers {
+      _id
+      age
+      firstName
+      lastName
+      campId {
+        _id
+        date
+        location
+        }
+      }
+    date
+    location
+    title
+    price
+  }
+  }
+`;
+
+export const MUTATION_ADD_CAMPER = gql`
+  mutation AddCamper(
+    $firstName: String!
+    $lastName: String!
+    $age: Int!
+    $gradeFinished: Int!
+    $tshirtSize: String!
+    $emergencyContact: [ID]!
+    $waiverSigned: Boolean!
+    $campId: ID!
+  ) {
+    addCamper(
+      firstName: $firstName
+      lastName: $lastName
+      age: $age
+      gradeFinished: $gradeFinished
+      tshirtSize: $tshirtSize
+      emergencyContact: $emergencyContact
+      waiverSigned: $waiverSigned
+      campId: $campId
+    ) {
+      _id
+      age
+      firstName
+      lastName
+      campId {
+        _id
+        title
+      }
+      gradeFinished
+      tshirtSize
+      emergencyContact {
+        _id
+        firstName
+        lastName
+        phoneNumber1
+        phoneNumber2
+      }
+      waiverSigned
+    }
+  }
+`;
+
+export const MUTATION_ADD_EMERGENCY = gql`
+  mutation AddEmergency(
+    $firstName: String!
+    $lastName: String!
+    $phoneNumber1: String!
+    $phoneNumber2: String!
+  ) {
+    addEmergency(
+      firstName: $firstName
+      lastName: $lastName
+      phoneNumber1: $phoneNumber1
+      phoneNumber2: $phoneNumber2
+    ) {
+      _id
+      firstName
+      lastName
+      phoneNumber1
+      phoneNumber2
+    }
+  }
+`;
