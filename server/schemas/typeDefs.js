@@ -7,8 +7,17 @@ const typeDefs = gql`
     lastName: String!
     email: String!
     password: String!
-    adminAccess: Boolean!
     campers: [Camper]
+    }
+
+    type Admin {
+    _id: ID
+    firstName: String!
+    lastName: String!
+    email: String!
+    password: String!
+    phoneNumber1: String!
+    # adminAccess: Boolean!
     }
 
     type Camp {

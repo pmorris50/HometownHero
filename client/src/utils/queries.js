@@ -17,7 +17,7 @@ export const QUERY_USERS = gql`
           title
         }
       }
-      adminAccess
+      # adminAccess
     }
   }
 `;
