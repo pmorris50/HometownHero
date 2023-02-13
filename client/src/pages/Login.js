@@ -5,7 +5,9 @@ import { MUTATION_LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const Login = (props) => {
-    const [formState, setFormState] = useState({ email: '', password: '' });
+    const [formState, setFormState] = useState({ 
+      email: '', 
+      password: '' });
     const [login, { error, data }] = useMutation(MUTATION_LOGIN);
   
     // update state based on form input changes
@@ -23,15 +25,16 @@ const Login = (props) => {
       event.preventDefault();
       console.log(formState);
       try {
+        
         const { data } = await login({
           variables: { ...formState },
         });
   
-        Auth.login(data.login.token);
+        //Auth.login(data.login.token);
       } catch (e) {
-        console.error(e);
+         console.error(e + " this error");
       }
-  
+
       // clear form values
       setFormState({
         email: '',
