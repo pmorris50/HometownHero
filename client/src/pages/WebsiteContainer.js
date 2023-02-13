@@ -1,11 +1,11 @@
 // Importing React and UseState from react
 import React, {useState} from 'react';
 //import About Page from our pages/about.js
-import About from './about';
-import Shop from './shop'
+import About from './About';
+import Shop from './Shop'
 //render header and footer
-import Footer from '../components/footer';
-import Header from '../components/header';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 
 export default function WebsiteContainer(){
