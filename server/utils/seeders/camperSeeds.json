@@ -1,0 +1,86 @@
+[
+    {
+        "firstName": "John",
+        "lastName": "Smith",
+        "age": 8,
+        "gradeFinished": 3,
+        "tshirtSize": "small",
+        "emergencyContact": [{
+            "name": "Jane Smith",
+            "phoneNumber1": "555-555-5555",
+            "phoneNumber2": "555-555-5555"
+    }],
+        "waiverSigned": true,
+        "campId": 1
+    },
+    {
+        "firstName": "Bill",
+        "lastName": "Smith",
+        "age": 10,
+        "gradeFinished": 5,
+        "tshirtSize": "medium",
+        "emergencyContact": [{
+            "name": "Jane Smith",
+            "phoneNumber1": "555-555-5555",
+            "phoneNumber2": "555-555-5555"
+        }],
+        "waiverSigned": true,
+        "campId": 1
+    },
+    {
+        "firstName": "Will",
+        "lastName": "Jones",
+        "age": 8,
+        "gradeFinished": 3,
+        "tshirtSize": "small",
+        "emergencyContact": [{
+            "name": "Bob Jones",
+            "phoneNumber1": "555-555-5555",
+            "phoneNumber2": "555-555-5555"
+        }],
+        "waiverSigned": true,
+        "campId": 2
+    },
+    {
+        "firstName": "Sue",
+        "lastName": "Collins",
+        "age": 10,
+        "gradeFinished": 5,
+        "tshirtSize": "medium",
+        "emergencyContact": [{
+            "name": "Abby Collins",
+            "phoneNumber1": "555-555-5555",
+            "phoneNumber2": "555-555-5555"
+        }],
+        "waiverSigned": true,
+        "campId": 2
+    },
+    {
+        "firstName": "Paul",
+        "lastName": "Cook",
+        "age": 9,
+        "gradeFinished": 4,
+        "tshirtSize": "medium",
+        "emergencyContact": [{
+            "name": "Rob Cook",
+            "phoneNumber1": "555-555-5555",
+            "phoneNumber2": "555-555-5555"
+        }],
+        "waiverSigned": true,
+        "campId": 3
+    },
+    {
+        "firstName": "Jeff",
+        "lastName": "Michaels",
+        "age": 8,
+        "gradeFinished": 3,
+        "tshirtSize": "small",
+        "emergencyContact": [{
+            "name": "Sean Michaels",
+            "phoneNumber1": "555-555-5555",
+            "phoneNumber2": "555-555-5555"
+        }],
+        "waiverSigned": true,
+        "campId": 3
+    }
+]

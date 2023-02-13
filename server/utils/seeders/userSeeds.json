@@ -1,0 +1,37 @@
+[
+    {
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "email": "j@test.com",
+        "password": "123",
+        "campers": [] 
+    },
+    {
+        "firstName": "Bob",
+        "lastName": "Jones",
+        "email": "b@test.com",
+        "password": "123",
+        "campers": [] 
+    },
+    {
+        "firstName": "Abby",
+        "lastName": "Collins",
+        "email": "a@test.com",
+        "password": "123",
+        "campers": [] 
+    },
+    {
+        "firstName": "Rob",
+        "lastName": "Cook",
+        "email": "r@test.com",
+        "password": "123",
+        "campers": [] 
+    },
+    {
+        "firstName": "Sean",
+        "lastName": "Michaels",
+        "email": "s@test.com",
+        "password": "123",
+        "campers": [] 
+    }
+]
