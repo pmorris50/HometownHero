@@ -31,12 +31,6 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
-    adminAccess: {
-        type: Boolean,
-        required: true,
-        default: false,
-    },
-    
     campers: [
         {
             type: Schema.Types.ObjectId,
