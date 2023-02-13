@@ -16,7 +16,8 @@ import Footer from './components/footer';
 import SignUp from './pages/signUp';
 import Login from './pages/Login';
 import WebsiteContainer from './pages/WebsiteContainer';
-import Waiver from './components/waiver'
+import Waiver from './components/waiver';
+//import Admin from './pages/Admin';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
