@@ -11,12 +11,12 @@ import {
 import { setContext } from '@apollo/client/link/context';
 
 
-import Header from './components/header';
-import Footer from './components/footer';
-import SignUp from './pages/signUp';
+import Header from './components/TempHeader';
+import Footer from './components/TempFooter';
+import SignUp from './pages/TempSignup';
 import Login from './pages/Login';
 import WebsiteContainer from './pages/WebsiteContainer';
-import Waiver from './components/waiver'
+import Waiver from './components/TempWaiver'
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({

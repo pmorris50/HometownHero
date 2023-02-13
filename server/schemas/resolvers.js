@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Camper, emergency, Camps, Product, Order } = require("../models");
+const { User, Camper, Emergency, Camps, Product, Order } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
@@ -25,6 +25,14 @@ const resolvers = {
 
         return camp;
     },
+
+    camper: async () => {
+        return Camper.find();
+    },
+
+    emergency: async () => {
+        return Emergency.find();
+    }
   },
 
   Mutation: {
@@ -54,6 +62,21 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+
+    addCamp: async (parent, { title, location, date, price, campers }) => {
+      const camp = await Camps.create({ title, location, date, price, campers });
+      return camp;
+    },
+
+    addCamper: async (parent, { firstName, lastName, age, gradeFinished, tshirtSize, emergencyContact, waiverSigned, campId }) => {
+      const camper = await Camper.create({ firstName, lastName, age, gradeFinished, tshirtSize, emergencyContact, waiverSigned, campId });
+      return camper;
+    },
+
+    addEmergency: async (parent, { firstName, lastName, phoneNumber1, phoneNumber2 }) => {
+      const emergency = await Emergency.create({ firstName, lastName, phoneNumber1, phoneNumber2 });
+      return emergency;
+    }
 
     // order: async (parent, { _id }, context) => {
     //     console.log(JSON.parse(JSON.stringify(context)));
