@@ -1,35 +1,35 @@
-import React, {useState} from "react";
-import {SiInstagram} from "react-icons/si";
+import React, { useState } from "react";
+import { SiInstagram } from "react-icons/si";
 import { FcIphone } from "react-icons/fc"
 import IconContext from "react-icons";
-import {MdOutlineEmail} from 'react-icons/md';
-import {FaInstagram} from 'react-icons/fa';
+import { MdOutlineEmail } from 'react-icons/md';
+import { FaInstagram } from 'react-icons/fa';
 
 
 
-const Footer = () =>{
+const Footer = () => {
     const styles = {
-        customFooter: 
+        customFooter:
         {
-        height: '80px',
-        background: '#FFB612',
-        opacity: '.75'
+            height: '80px',
+            background: '#FFB612',
+            opacity: '.75'
         },
 
 
     }
 
     return (
-        <div className = 'mb-5'>
-            <footer className =  "fixed-bottom" style = {styles.customFooter}>
-                <FcIphone className = "m-3" size = {40} color = "#203731"/>
-                <MdOutlineEmail className = 'm-3' size = {40} color = "#203731"/>
-                <FaInstagram className = 'm-3' size = {40} color = "#203731"/>
-                
+        <div className='mb-5'>
+            <footer className="fixed-bottom" style={styles.customFooter}>
+                <FcIphone className="m-3" size={40} color="#203731" />
+                <MdOutlineEmail className='m-3' size={40} color="#203731" />
+                <FaInstagram className='m-3' size={40} color="#203731" />
+
             </footer>
         </div>
 
-        
+
     )
 }
 
