@@ -6,7 +6,8 @@ import Shop from './Shop'
 //render header and footer
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-
+import Admin from '../pages/Admin';
+import Login from '../pages/Login';
 
 export default function WebsiteContainer(){
 
@@ -20,6 +21,12 @@ export default function WebsiteContainer(){
         }
         if(currentPage === 'Shop') {
             return <Shop/>
+        }
+        if(currentPage === 'Admin'){
+            return <Admin/>
+        }
+        if(currentPage === 'Login'){
+            return <Login/>
         }
     };
 
