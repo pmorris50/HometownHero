@@ -1,0 +1,32 @@
+[
+    {
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "phoneNumber1": "123-456-7890",
+        "phoneNumber2": "123-456-7890"
+    },
+     {
+        "firstName": "Bob",
+        "lastName": "Jones",
+        "phoneNumber1": "123-456-7890",
+        "phoneNumber2": "123-456-7890"
+    },
+     {
+        "firstName": "Abby",
+        "lastName": "Collins",
+        "phoneNumber1": "123-456-7890",
+        "phoneNumber2": "123-456-7890"
+    },
+     {
+        "firstName": "Rob",
+        "lastName": "Cook",
+        "phoneNumber1": "123-456-7890",
+        "phoneNumber2": "123-456-7890"
+    },
+     {
+        "firstName": "Sean",
+        "lastName": "Michaels",
+        "phoneNumber1": "123-456-7890",
+        "phoneNumber2": "123-456-7890"
+    }
+]
