@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { MUTATION_LOGIN } from '../utils/mutations';
-import './Login.css'
+import './Login.css';
 import Auth from '../utils/auth';
 
 const Login = (props) => {
@@ -82,7 +82,7 @@ const Login = (props) => {
                     onChange={handleChange}
                   />
                   <button
-                    className="btn btn-block btn-primary loginbtn"
+                    className="btn btn-block loginbtn"
                     style={styles.button}
                     type="submit"
                   >
