@@ -28,10 +28,10 @@ const Navbar = ({ handlePageChange }) => {
                                 <a class="nav-link active" aria-current="page" href="#About" onClick={() => handlePageChange('About')}>About</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#Signup" onClick={() => handlePageChange('Login')}>Signup</a>
+                                <a class="nav-link" href="#Signup" onClick={() => handlePageChange('Signup')}>Signup</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#Login" onClick={() => handlePageChange('Signup')}>Login</a>
+                                <a class="nav-link" href="#Login" onClick={() => handlePageChange('Login')}>Login</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#Shop" onClick={() => handlePageChange('Shop')}>Shop</a>

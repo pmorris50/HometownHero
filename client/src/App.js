@@ -16,6 +16,7 @@ import Footer from './components/Footer';
 import SignUp from './pages/Signup';
 import Login from './pages/Login';
 import WebsiteContainer from './pages/WebsiteContainer';
+import RegistrationForm from './components/RegistrationForm';
 import Waiver from './components/Waiver';
 //import Admin from './pages/Admin';
 
@@ -50,6 +51,7 @@ function App() {
     <div className="App">
       <ApolloProvider client={client}>
         <WebsiteContainer />
+        <RegistrationForm/>
       </ApolloProvider>
     </div>
   );
