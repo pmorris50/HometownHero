@@ -1,5 +1,6 @@
 import React from "react";
 import "./About.css";
+import Auth from '../utils/auth'
 
 const About = () => {
   const styles = {
