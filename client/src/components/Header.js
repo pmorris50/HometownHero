@@ -6,7 +6,6 @@ const Navbar = ({ handlePageChange }) => {
         {
             height: '80px',
             background: '#FFB612',
-            opacity: '.75'
         },
         title: {
             color: "#203731"

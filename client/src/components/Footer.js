@@ -13,7 +13,6 @@ const Footer = () => {
         {
             height: '80px',
             background: '#FFB612',
-            opacity: '.75'
         },
 
 
