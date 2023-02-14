@@ -15,25 +15,25 @@ const Navbar = ({ handlePageChange }) => {
 
     return (
         <div>
-            <nav class="navbar navbar-expand-lg navbar-light" style={styles.customHeader}>
-                <div class="container-fluid">
+            <nav className="navbar navbar-expand-lg navbar-light" style={styles.customHeader}>
+                <div className="container-fluid">
                     <h1 style={styles.title}> I am a Header</h1>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse ms-5" id="navbarNavDropdown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#About" onClick={() => handlePageChange('About')}>About</a>
+                    <div className="collapse navbar-collapse ms-5" id="navbarNavDropdown">
+                        <ul className="navbar-nav">
+                            <li className="nav-item">
+                                <a className="nav-link active" aria-current="page" href="#About" onClick={() => handlePageChange('About')}>About</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#Signup" onClick={() => handlePageChange('Login')}>Signup</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#Signup" onClick={() => handlePageChange('Signup')}>Signup</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#Login" onClick={() => handlePageChange('Signup')}>Login</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#Login" onClick={() => handlePageChange('Login')}>Login</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#Shop" onClick={() => handlePageChange('Shop')}>Shop</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#Shop" onClick={() => handlePageChange('Shop')}>Shop</a>
                             </li>
                         </ul>
                     </div>
