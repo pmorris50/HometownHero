@@ -13,21 +13,46 @@ db.once("open", async () => {
     await Camps.deleteMany({});
     await Camps.create(campSeeds);
 
+    // create campers with camp and user fields
+    const campers = [];
+    for (const camperSeed of camperSeeds) {
+      const camp = await Camps.findOne({ name: camperSeed.title });
+      const user = await User.findOne({ email: camperSeed.email });
+      campers.push({
+        ...camperSeed,
+        camp: camp._id,
+        user: user._id,
+      });
+    }
     await Camper.deleteMany({});
     await Camper.create(camperSeeds);
 
-    await Emergency.deleteMany({});
-    //await Emergency.create(emergencySeeds);
+    // update camp field of each camper
+    for (const camper of campers) {
+      await Camper.findOneAndUpdate(
+        { _id: camper._id },
+        { $set: { camp: camper.camp } }
+      );
+    }
 
-    for (let i = 0; i < emergencySeeds.length; i++) {
-      const { _id } = await Emergency.create(emergencySeeds[i]);
-      const Camper = await Camper.findOneAndUpdate(
-        { _id: Camper },
-        {
-          $addToSet: {
-            camperSeeds: _id,
-          },
-        }
+    // update user field of each camper
+    for (const camper of campers) {
+      await Camper.findOneAndUpdate(
+        { _id: camper._id },
+        { $set: { user: camper.user } }
+      );
+    }
+
+    // create emergencies
+    await Emergency.deleteMany({});
+    await Emergency.create(emergencySeeds);
+
+    // update emergency field of each camper
+    for (const camper of campers) {
+      const emergency = await Emergency.findOne({ name: camper.emergency });
+      await Camper.findOneAndUpdate(
+        { _id: camper._id },
+        { $set: { emergency: emergency._id } }
       );
     }
 
