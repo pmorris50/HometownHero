@@ -1,14 +1,18 @@
 import decode from 'jwt-decode';
 
 class AuthService {
-  getProfile() {
-    return decode(this.getToken());
-  }
+
 
   loggedIn() {
     const token = this.getToken();
     // If there is a token and it's not expired, return `true`
     return token && !this.isTokenExpired(token) ? true : false;
+  }
+
+  isAdmin() {
+    const token = this.getToken();
+    console.log(token);
+    return token.data.adminAccess // admin access is boolean
   }
 
   isTokenExpired(token) {
