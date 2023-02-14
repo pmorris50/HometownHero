@@ -9,7 +9,7 @@ import {
 } from '@apollo/client';
 
 import { setContext } from '@apollo/client/link/context';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as HashRouter, Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import About from './pages/About'
@@ -53,7 +53,7 @@ function App() {
   return (
     
       <ApolloProvider client={client}>
-        <Router>
+        <HashRouter>
         <div className="flex-column justify-flex-start min-100-vh">
             <Header />
           <div className="container">
@@ -82,7 +82,7 @@ function App() {
           </div>
             <Footer />
       </div>
-        </Router>
+        </HashRouter>
       </ApolloProvider>
     
   );
