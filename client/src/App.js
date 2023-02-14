@@ -68,6 +68,10 @@ function App() {
             path = "/shop"
             element = {<Shop/>} 
             />
+            <Route 
+            path = "/signup"
+            element = {<Signup/>}
+            />
         </div>
         
         </Router>
