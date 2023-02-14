@@ -39,6 +39,7 @@ const typeDefs = gql`
     emergencyContact: [Emergency]
     waiverSigned: Boolean!
     campId: Camp
+    userId: User
     }
 
     type Emergency {
@@ -84,7 +85,7 @@ const typeDefs = gql`
     addOrder(products: [ID]!): Order
     login(email: String!, password: String!): Auth
     addCamp(title: String!, location: String!, date: String!, price: Float!): Camp
-    addCamper(firstName: String!, lastName: String!, age: Int!, gradeFinished: Int!, tshirtSize: String!, emergencyContact: [ID]!, waiverSigned: Boolean!, campId: ID!): Camper
+    addCamper(firstName: String!, lastName: String!, age: Int!, gradeFinished: Int!, tshirtSize: String!, emergencyContact: [ID]!, waiverSigned: Boolean!, campId: ID!, userId: ID!): Camper
     addEmergency(firstName: String!, lastName: String!, phoneNumber1: String!, phoneNumber2: String!): Emergency
     }
 `;

@@ -17,21 +17,21 @@ const resolvers = {
     },
 
     camps: async () => {
-        return Camps.find();
+      return Camps.find();
     },
 
     camp: async (parent, { _id }) => {
-        const camp = await Camps.findById(_id);
+      const camp = await Camps.findById(_id);
 
-        return camp;
+      return camp;
     },
 
     camper: async () => {
-        return Camper.find();
+      return Camper.find();
     },
 
     emergency: async () => {
-        return Emergency.find();
+      return Emergency.find();
     }
   },
 
@@ -68,9 +68,21 @@ const resolvers = {
       return camp;
     },
 
-    addCamper: async (parent, { firstName, lastName, age, gradeFinished, tshirtSize, emergencyContact, waiverSigned, campId }) => {
-      const camper = await Camper.create({ firstName, lastName, age, gradeFinished, tshirtSize, emergencyContact, waiverSigned, campId });
+    addCamper: async (parent, { firstName, lastName, age, gradeFinished, tshirtSize, emergencyContact, waiverSigned, campId }, context) => {
+
+      const camper = await Camper.create({ firstName, lastName, age, gradeFinished, tshirtSize, emergencyContact, waiverSigned, campId, userId: context.user._id });
+
+      await User.findOneAndUpdate(
+        { _id: context.user._id },
+        { $addToSet: { campers: camper._id } },
+        {
+          new: true,
+          runValidators: true,
+        }
+      )
+
       return camper;
+
     },
 
     addEmergency: async (parent, { firstName, lastName, phoneNumber1, phoneNumber2 }) => {
