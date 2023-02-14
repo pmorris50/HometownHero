@@ -1,5 +1,8 @@
 import React, {useState} from 'react'
-import Waiver from './waiver'; 
+import { MUTATION_ADD_CAMPER } from '../utils/mutations';
+import { useMutation } from '@apollo/client';
+
+import Waiver from './Waiver'; 
 const Modal = ({children, showModal, setShowModal}) => {
     return (
         <>
@@ -20,21 +23,81 @@ const Modal = ({children, showModal, setShowModal}) => {
     }
 
 
-const registrationForm = () => {
+const RegistrationForm = () => {
+
+    //user info
     const [ShowModal, setShowModal] = useState(false)
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [age, setAge] = useState("");
     const [gradeFinished, setGradeFinished] = useState("")
-    const [tshirtSize, settshirtSize] = useState("")
+    const [tshirtSize, setTshirtSize] = useState("")
+
+    //camp info
+    const [ campData, setCampData ] = useState({
+      title: '',
+      location: '',
+      price: '',
+
+    })
+
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      return <Waiver/>;
+      
+    }
 
     return (
+      <form onSubmit={handleSubmit}>
         <div>
-            
-            <Waiver/>
+          <label htmlFor="first-name">First Name:</label>
+          <input
+            type="text"
+            id="first-name"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+          />
         </div>
-    )
-    
+        <div>
+          <label htmlFor="last-name">Last Name:</label>
+          <input
+            type="text"
+            id="last-name"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+          />
+        </div>
+        <div>
+          <label htmlFor="age">Age:</label>
+          <input
+            type="number"
+            id="age"
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
+          />
+        </div>
+        <div>
+          <label htmlFor="grade-finished">Grade Finished:</label>
+          <input
+            type="text"
+            id="grade-finished"
+            value={gradeFinished}
+            onChange={(e) => setGradeFinished(e.target.value)}
+          />
+        </div>
+        <div>
+          <label htmlFor="tshirt-size">T-shirt Size:</label>
+          <input
+            type="text"
+            id="tshirt-size"
+            value={tshirtSize}
+            onChange={(e) => setTshirtSize(e.target.value)}
+          />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    );
+  
 }
 
-export default registrationForm
+export default RegistrationForm;
