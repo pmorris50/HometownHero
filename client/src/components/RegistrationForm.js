@@ -16,8 +16,6 @@ const Modal = ({children, showModal, setShowModal}) => {
             </div>
           )}
         </>
-      ;
-    
         </>
       )
     }
