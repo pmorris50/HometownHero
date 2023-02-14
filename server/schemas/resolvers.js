@@ -1,5 +1,6 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Camper, Emergency, Camps, Product, Order } = require("../models");
+const Camp = require("../models/Camps");
 const { signToken } = require("../utils/auth");
 
 const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
@@ -69,24 +70,35 @@ const resolvers = {
     },
 
     addCamper: async (parent, { firstName, lastName, age, gradeFinished, tshirtSize, emergencyContact, waiverSigned, campId }, context) => {
+      console.log(context.user);
+      if (context.user) {
 
-      const camper = await Camper.create({ firstName, lastName, age, gradeFinished, tshirtSize, emergencyContact, waiverSigned, campId, userId: context.user._id });
+        const camper = await Camper.create({ firstName, lastName, age, gradeFinished, tshirtSize, emergencyContact, waiverSigned, campId, userId: context.user._id });
 
-      await User.findOneAndUpdate(
-        { _id: context.user._id },
-        { $addToSet: { campers: camper._id } },
-        {
-          new: true,
-          runValidators: true,
-        }
-      )
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { campers: camper._id } },
+          { new: true, runValidators: true, }
+        )
 
-      return camper;
+        await Camps.findOneAndUpdate(
+          { _id: campId },
+          { $addToSet: { campers: camper._id } }
+        )
+
+        return camper;
+      }
 
     },
 
-    addEmergency: async (parent, { firstName, lastName, phoneNumber1, phoneNumber2 }) => {
-      const emergency = await Emergency.create({ firstName, lastName, phoneNumber1, phoneNumber2 });
+    addEmergency: async (parent, { firstName, lastName, phoneNumber1, phoneNumber2, camperId }) => {
+      const emergency = await Emergency.create({ firstName, lastName, phoneNumber1, phoneNumber2, camperId });
+
+      await Camper.findOneAndUpdate(
+        { _id: camperId },
+        { $addToSet: { emergencyContact: emergency._id } }
+      )
+
       return emergency;
     }
 

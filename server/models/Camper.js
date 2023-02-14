@@ -32,7 +32,6 @@ const camperSchema = new Schema({
             ref: "emergency"
         }
     ],
-
     waiverSigned: {
         type: Boolean,
         required: true
@@ -41,13 +40,6 @@ const camperSchema = new Schema({
         {
             type: Schema.Types.ObjectId,
             ref: 'camp'
-        }
-    ],
-    userId: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'user'
-
         }
     ]
 })
