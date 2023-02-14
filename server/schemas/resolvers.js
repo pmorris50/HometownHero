@@ -1,5 +1,6 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Camper, Emergency, Camps, Product, Order } = require("../models");
+const Camp = require("../models/Camps");
 const { signToken } = require("../utils/auth");
 
 const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
@@ -17,21 +18,21 @@ const resolvers = {
     },
 
     camps: async () => {
-        return Camps.find();
+      return Camps.find();
     },
 
     camp: async (parent, { _id }) => {
-        const camp = await Camps.findById(_id);
+      const camp = await Camps.findById(_id);
 
-        return camp;
+      return camp;
     },
 
     camper: async () => {
-        return Camper.find();
+      return Camper.find();
     },
 
     emergency: async () => {
-        return Emergency.find();
+      return Emergency.find();
     }
   },
 
@@ -68,13 +69,36 @@ const resolvers = {
       return camp;
     },
 
-    addCamper: async (parent, { firstName, lastName, age, gradeFinished, tshirtSize, emergencyContact, waiverSigned, campId }) => {
-      const camper = await Camper.create({ firstName, lastName, age, gradeFinished, tshirtSize, emergencyContact, waiverSigned, campId });
-      return camper;
+    addCamper: async (parent, { firstName, lastName, age, gradeFinished, tshirtSize, emergencyContact, waiverSigned, campId }, context) => {
+      console.log(context.user);
+      if (context.user) {
+
+        const camper = await Camper.create({ firstName, lastName, age, gradeFinished, tshirtSize, emergencyContact, waiverSigned, campId, userId: context.user._id });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { campers: camper._id } },
+          { new: true, runValidators: true, }
+        )
+
+        await Camps.findOneAndUpdate(
+          { _id: campId },
+          { $addToSet: { campers: camper._id } }
+        )
+
+        return camper;
+      }
+
     },
 
-    addEmergency: async (parent, { firstName, lastName, phoneNumber1, phoneNumber2 }) => {
-      const emergency = await Emergency.create({ firstName, lastName, phoneNumber1, phoneNumber2 });
+    addEmergency: async (parent, { firstName, lastName, phoneNumber1, phoneNumber2, camperId }) => {
+      const emergency = await Emergency.create({ firstName, lastName, phoneNumber1, phoneNumber2, camperId });
+
+      await Camper.findOneAndUpdate(
+        { _id: camperId },
+        { $addToSet: { emergencyContact: emergency._id } }
+      )
+
       return emergency;
     }
 

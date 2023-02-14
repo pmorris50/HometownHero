@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { MUTATION_LOGIN } from '../utils/mutations';
-
+import './Login.css';
 import Auth from '../utils/auth';
 
 const Login = (props) => {
@@ -41,22 +41,33 @@ const Login = (props) => {
         password: '',
       });
     };
+
+    const styles = {
+      header: {
+        background: '#203731',
+        color: "#FFB612"
+      },
+      button: {
+        color: "#FFB612",
+        backgroundColor: "#203731"
+      }
+    }
   
     return (
-      <main className="flex-row justify-center mb-4">
-        <div className="col-12 col-lg-10">
+      <main className="container flex-row justify-center">
+        <div className="col-12 mt-4">
           <div className="card">
-            <h4 className="card-header bg-dark text-light p-2">Login</h4>
+            <h4 className="card-header p-2" style={styles.header}>Login</h4>
             <div className="card-body">
               {data ? (
                 <p>
-                  Success! You may now head
+                  Success! You are now logged in.
                 </p>
               ) : (
-                <form onSubmit={handleFormSubmit}>
+                <form onSubmit={handleFormSubmit} className='loginForm'>
                   <input
                     className="form-input"
-                    placeholder="Your email"
+                    placeholder="email@example.com"
                     name="email"
                     type="email"
                     value={formState.email}
@@ -71,8 +82,8 @@ const Login = (props) => {
                     onChange={handleChange}
                   />
                   <button
-                    className="btn btn-block btn-primary"
-                    style={{ cursor: 'pointer' }}
+                    className="btn btn-block loginbtn"
+                    style={styles.button}
                     type="submit"
                   >
                     Submit

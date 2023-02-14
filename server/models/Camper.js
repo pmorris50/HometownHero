@@ -30,9 +30,8 @@ const camperSchema = new Schema({
         {
             type: Schema.Types.ObjectId,
             ref: "emergency"
-        }  
+        }
     ],
-
     waiverSigned: {
         type: Boolean,
         required: true
