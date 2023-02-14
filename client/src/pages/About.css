@@ -1,0 +1,10 @@
+.img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .7;
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
