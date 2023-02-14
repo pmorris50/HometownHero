@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from 'react-router-dom'
 import Auth from '../utils/auth';
 
-const Navbar = ({ handlePageChange }) => {
+const Navbar = () => {
     const styles = {
         customHeader:
         {
@@ -13,6 +13,13 @@ const Navbar = ({ handlePageChange }) => {
             color: "#203731"
         }
 
+    }
+    const [ activeLink, setActiveLink ] = useState('');
+
+    function handleNavLinkClick(event) {
+        event.preventDefault();
+
+        setActiveLink(event.target.innerText)
     }
 
     return (
@@ -28,28 +35,36 @@ const Navbar = ({ handlePageChange }) => {
                             (
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
-                                        <Link to="/" className="nav-link" href="#Logout" onClick={() => {Auth.logout()}}>Logout</Link>
+                                        <Link to="/" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => { Auth.logout() ,handleNavLinkClick}}>Logout</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to='/' className="nav-link active" aria-current="page" href="#About" onClick={() => handlePageChange('About')}>About</Link>
+                                        <Link to='/' className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} aria-current="page" onClick={() => handleNavLinkClick}>About</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to="/shop" className="nav-link" href="#Shop" onClick={() => handlePageChange('Shop')}>Shop</Link>
+                                        <Link to="/shop" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick}>Shop</Link>
                                     </li>
+                                    {Auth.isAdmin() ?
+                                        (
+                                            <li className="nav-item">
+                                                <Link to="/admin" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick}>Admin</Link>
+                                            </li>
+                                        ) : (
+                                            <li></li>)
+                                    }
                                 </ul>
                             ) : (
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
-                                        <Link to='/' className="nav-link active" aria-current="page" href="#About" onClick={() => handlePageChange('About')}>About</Link>
+                                        <Link to='/' className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'}  aria-current="page" onClick={() => handleNavLinkClick}>About</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to="/login" className="nav-link" href="#Login" onClick={() => handlePageChange('Login')}>Login</Link>
+                                        <Link to="/login" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick}>Login</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to="/signup" className="nav-link" href="#Signup" onClick={() => handlePageChange('Signup')}>Signup</Link>
+                                        <Link to="/signup" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick}>Signup</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to="/shop" className="nav-link" href="#Shop" onClick={() => handlePageChange('Shop')}>Shop</Link>
+                                        <Link to="/shop" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick}>Shop</Link>
                                     </li>
                                 </ul>
                             )
