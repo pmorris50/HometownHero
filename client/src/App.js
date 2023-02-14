@@ -17,7 +17,6 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import WebsiteContainer from './pages/WebsiteContainer';
 import RegistrationForm from './components/RegistrationForm';
 import Waiver from './components/Waiver';
 import Shop from './pages/Shop'
@@ -74,6 +73,10 @@ function App() {
               <Route
                 path="/signup"
                 element={<Signup />}
+              />
+              <Route 
+              path="/admin"
+              element={<Admin />}
               />
             </Routes>
           </div>
