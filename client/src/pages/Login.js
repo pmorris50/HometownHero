@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { MUTATION_LOGIN } from '../utils/mutations';
 import './Login.css';
+import { Navigate } from 'react-router-dom'
+
 import Auth from '../utils/auth';
 
 const Login = (props) => {
@@ -30,7 +32,7 @@ const Login = (props) => {
           variables: { ...formState },
         });
   
-        //Auth.login(data.login.token);
+        Auth.login(data.login.token);
       } catch (e) {
          console.error(e + " this error");
       }
@@ -60,9 +62,7 @@ const Login = (props) => {
             <h4 className="card-header p-2" style={styles.header}>Login</h4>
             <div className="card-body">
               {data ? (
-                <p>
-                  Success! You are now logged in.
-                </p>
+                <Navigate to="/" />
               ) : (
                 <form onSubmit={handleFormSubmit} className='loginForm'>
                   <input
