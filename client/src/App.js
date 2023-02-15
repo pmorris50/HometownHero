@@ -29,7 +29,7 @@ import Cancel from "./pages/Cancel";
 import Success from "./pages/Success";
 import ShopNav from "./components/ShopNav";
 import { Container } from "react-bootstrap";
-import { CartProvider } from "./CartContext";
+import { CartProvider } from "./CartProvider";
 import Admin from "./pages/Admin";
 
 // Construct our main GraphQL API endpoint
@@ -66,14 +66,9 @@ function App() {
             <Routes>
               <Route path="/" element={<About />} />
               <Route path="/login" element={<Login />} />
-              <CartProvider>
-                <Container>
-                  <ShopNav></ShopNav>
-                  <BrowserRouter>
-                    <Route path="/shop" element={<Shop />} />
-                  </BrowserRouter>
-                </Container>
-              </CartProvider>
+
+              <Route path="/shop" element={<Shop />} />
+
               <Route path="/signup" element={<Signup />} />
               <Route path="/admin" element={<Admin />} />
             </Routes>

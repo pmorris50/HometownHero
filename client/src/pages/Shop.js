@@ -29,24 +29,36 @@
 //     </div>
 //   );
 // }
+import React, { useState } from "react";
+import Store from "./Store";
+import Success from "./Success";
+import Cancel from "./Cancel";
 
 import { Row, Col} from "react-bootstrap";
 import { productsArray } from "../productsStore";
 import ProductCard from "../components/ProductCard";
+import ShopNavComponent from "../components/ShopNav";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CartProvider from "../CartProvider";
 
 import { Button, Container, Navbar, Modal } from "react-bootstrap";
 
-function NavStore() {
-  <>
-    <h1 align="center" className="p-4">Welcome!</h1>
-    <Row xs={1} md={3} className="g-4">
-      {productsArray.map((product, idx) => (
-        <Col align="center" key={idx}>
-        <ProductCard product={product}/>
-        </Col>
-      ))}
-    </Row>
-  </>
+const Shop = () => {
+  return (
+    <CartProvider>
+      <div className="container">
+        <ShopNavComponent>
+          <BrowserRouter>
+          <Routes>
+            <Route index element={<Store />} />
+            <Route path="success" element={<Success />} />
+            <Route path="cancel" element={<Cancel />} />
+            </Routes>
+          </BrowserRouter>
+        </ShopNavComponent>
+      </div>
+    </CartProvider>
+  );
 }
 
-export default NavStore;
+export default Shop;

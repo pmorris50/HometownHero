@@ -1,16 +1,18 @@
 import { Button, Container, Navbar, Modal } from "react-bootstrap";
 import { useState, useContext } from "react";
-import { CartContext } from "../CartContext";
+import CartContext from "../CartContext";
 import CartProduct from "./CartProduct";
 
-function NavStoreComponent() {
-    const cart = useContext(CartContext);
+function ShopNavComponent() {
+  const cart = useContext(CartContext.createContext);
+  console.log(cart);
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0);
+  const productsCount = cart.items.reduce(
+    (sum, product) => sum + product.quantity, 0);
 
   return (
     <>
@@ -53,4 +55,4 @@ function NavStoreComponent() {
   );
 }
 
-export default NavStoreComponent;
+export default ShopNavComponent;
