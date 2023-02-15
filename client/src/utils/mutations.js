@@ -66,9 +66,9 @@ export const MUTATION_ADD_CAMPER = gql`
     $age: String!
     $gradeFinished: String!
     $tshirtSize: String!
-    $emergencyContact: [ID]
+    $emergencyContact: [ID] 
     $waiverSigned: Boolean
-    $campId: ID
+    $campId: ID 
   ) {
     addCamper(
       firstName: $firstName

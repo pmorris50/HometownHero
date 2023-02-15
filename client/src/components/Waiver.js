@@ -42,7 +42,6 @@ const Waiver = () => {
   return (
     <div>
       <button onClick = {() => setShowModal(true)}>Waiver</button>
-      <FormModal showModal = {showModal} setShowModal = {setShowModal}>
     <form onSubmit={handleSubmit}>
       <h2>Youth Sports Camp Waiver</h2>
       <p>
@@ -80,7 +79,6 @@ const Waiver = () => {
       </p>
       <button type="submit" disabled={!agreed}>Submit</button>
     </form>
-    </FormModal>
     </div>
   );
 };

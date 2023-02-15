@@ -2,27 +2,9 @@ import React, {useState} from 'react'
 import { MUTATION_ADD_CAMPER } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 import "../pages/Login.css";
+import FormModal from './FormModal';
 
 import Waiver from './Waiver'; 
-const Modal = ({children, showModal, setShowModal}) => {
-    return (
-        <>
-        <>
-          {showModal && (
-            <div style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: "rgba(0,0,0,0.5)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <div style={{ backgroundColor: "#fff", padding: "20px", borderRadius: "10px" }}>
-                {children}
-                <button className="btn btn-danger"onClick={() => setShowModal(false)}>Close</button>
-              </div>
-            </div>
-          )}
-        </>
-      ;
-    
-        </>
-      )
-    }
-
 
 const RegistrationForm = () => {
 
@@ -38,12 +20,13 @@ const RegistrationForm = () => {
   }
 
     //user info
-    const [ShowModal, setShowModal] = useState(false)
+    const [showModal, setShowModal] = useState(false)
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [age, setAge] = useState("");
     const [gradeFinished, setGradeFinished] = useState("")
     const [tshirtSize, setTshirtSize] = useState("")
+    const [formSigned, setFormSigned] = useState(false);
 
     const [ addCamper, { error, data }] = useMutation(MUTATION_ADD_CAMPER);
 
@@ -69,15 +52,13 @@ const RegistrationForm = () => {
         console.error(e);
       }
 
-      return (
-        <div>
-          <Waiver/>
-        </div>
-      );
+      setFormSigned(true);
+      setShowModal(true);
       
     }
 
     return (
+      <div>
       <form className = "form" onSubmit={handleSubmit}>
         <h2 className="form-header p-3 rounded" style={styles.header}>Registration Form</h2>
         <div>
@@ -137,11 +118,20 @@ const RegistrationForm = () => {
         </div>
         <div className="d-flex justify-content-center">
           <button className="btn btn-primary loginbtn my-3" style={styles.button} type="submit">Submit</button>
+          
+          
         </div>
-        
-      </form>
+        </form>
+        {formSigned ? ( 
+             <FormModal showModal = {showModal} setShowModal = {setShowModal}>
+              <Waiver/>
+             </FormModal>
+            )
+            : null
+          }
+      </div>
     );
   
 }
 
-export default RegistrationForm
+export default RegistrationForm 
