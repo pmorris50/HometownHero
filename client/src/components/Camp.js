@@ -9,7 +9,6 @@ import FormModal from './FormModal';
 export default function Camp() {
 
     const { data } = useQuery(QUERY_CAMPS);
-    const camps = data;
     console.log(data);
 
     const [showModal, setShowModal] = useState(false)
@@ -23,7 +22,7 @@ export default function Camp() {
                             <h1>{camp.title}</h1>
                             <p>Date: {camp.date}</p>
                             <p>Location: {camp.location}</p>
-                            <p>Price: {camp.price}</p>
+                            <p>Price: $ {camp.price}</p>
                             {Auth.loggedIn() ? (
                                 <div>
                                     <button onClick={() => setShowModal(true)}>Register</button>
@@ -37,18 +36,10 @@ export default function Camp() {
                     }
                 </div>
                 ) : (
-                    "No camps Available!"
+                    "No camps Available at the moment!"
                 )
 
             }
-            {/* camps.map((camp) => (
-                    <div>
-                        <h1>{camp.title}</h1>
-                        <p>Date: {camp.date}</p>
-                        <p>Location: {camp.location}</p>
-                        <p>Price: {camp.price}</p>
-                    </div>
-                ) */}
         </div>
     )
 }
