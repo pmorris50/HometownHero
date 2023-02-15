@@ -1,7 +1,9 @@
 import decode from 'jwt-decode';
 
 class AuthService {
-
+  formatDate () {
+    newDate()
+  }
 
   loggedIn() {
     const token = this.getToken();
