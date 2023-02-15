@@ -81,10 +81,10 @@ const resolvers = {
           { new: true, runValidators: true, }
         )
 
-        await Camps.findOneAndUpdate(
-          { _id: campId },
-          { $addToSet: { campers: camper._id } }
-        )
+        // await Camps.findOneAndUpdate(
+        //   { _id: campId },
+        //   { $addToSet: { campers: camper._id } }
+        // )
 
         return camper;
       }

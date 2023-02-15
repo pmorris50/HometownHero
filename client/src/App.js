@@ -13,6 +13,7 @@ import { BrowserRouter as HashRouter, Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import About from './pages/About'
+import Admin from './pages/Admin'
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Signup from './pages/Signup';
@@ -20,7 +21,6 @@ import Login from './pages/Login';
 import RegistrationForm from './components/RegistrationForm';
 import Waiver from './components/Waiver';
 import Shop from './pages/Shop'
-import Admin from './pages/Admin';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
