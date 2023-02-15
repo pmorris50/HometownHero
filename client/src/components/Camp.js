@@ -4,7 +4,7 @@ import { QUERY_CAMPS } from '../utils/queries';
 import RegistrationForm from '../components/RegistrationForm'
 import Auth from '../utils/auth';
 import FormModal from './FormModal';
-
+import Waiver from './Waiver';
 
 export default function Camp() {
 
@@ -28,6 +28,7 @@ export default function Camp() {
                                 <div>
                                     <button onClick={() => setShowModal(true)}>Register</button>
                                     <FormModal showModal={showModal} setShowModal={setShowModal}>
+                                        <Waiver/>
                                         <RegistrationForm />
                                     </FormModal>
                                 </div>
