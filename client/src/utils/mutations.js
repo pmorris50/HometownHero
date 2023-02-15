@@ -104,10 +104,10 @@ export const MUTATION_ADD_CAMPER = gql`
 
 export const MUTATION_ADD_EMERGENCY = gql`
   mutation AddEmergency(
-    $firstName: String!
-    $lastName: String!
-    $phoneNumber1: String!
-    $phoneNumber2: String!
+    $firstName: String
+    $lastName: String
+    $phoneNumber1: String
+    $phoneNumber2: String
   ) {
     addEmergency(
       firstName: $firstName

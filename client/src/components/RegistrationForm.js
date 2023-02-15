@@ -124,7 +124,7 @@ const RegistrationForm = () => {
         </form>
         {formSigned ? ( 
              <FormModal showModal = {showModal} setShowModal = {setShowModal}>
-              <Waiver/>
+              <Waiver camperFirstName={firstName} camperLastName={lastName}/>
              </FormModal>
             )
             : null

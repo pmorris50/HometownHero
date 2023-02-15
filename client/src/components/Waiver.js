@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import FormModal from './FormModal'
 
+import { useMutation } from '@apollo/client';
+import { MUTATION_ADD_EMERGENCY } from "../utils/mutations";
+import { Navigate, useNavigate }   from "react-router-dom";
+
+
 
 // const Modal = ({children, showModal, setShowModal}) => {
 //   return (
@@ -23,7 +28,7 @@ import FormModal from './FormModal'
 
 
 
-const Waiver = () => {
+const Waiver = ({camperFirstName, camperLastName }) => {
   const [showModal, setShowModal] = useState(false)
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("")
@@ -34,9 +39,23 @@ const Waiver = () => {
   const [phoneNumber2, setPhoneNumber2] = useState("")
   const [agreed, setAgreed] = useState(false);
 
-  const handleSubmit = (event) => {
+  const [addEmergency, { error, data }] = useMutation(MUTATION_ADD_EMERGENCY);
+
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Code to submit the form data to the server or database
+    // Code to submit the form data to the server or database4
+    try {
+      const { data } = await addEmergency({
+        variables: { firstName, lastName, phoneNumber1, phoneNumber2 },
+      });
+      console.log("DATA:", data);
+      navigate('/');
+    } catch (e) { 
+      console.error(e);
+    }
+
   };
 
   return (
@@ -53,19 +72,16 @@ const Waiver = () => {
         including death, that may be sustained by the participating youth while participating in the camp activities.
       </p>
       <p>
-        Camper First Name: <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+        Camper First Name: <input type="text" value={camperFirstName} onChange={(e) => setFirstName(e.target.value)} />
       </p>
       <p>
-        Camper Last Name: <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+        Camper Last Name: <input type="text" value={camperLastName} onChange={(e) => setLastName(e.target.value)} />
       </p>
       <p>
-        Parent/Guardian  First Name: <input type="text" value={parentFirstName} onChange={(e) => setParentFirstName(e.target.value)} />
+        Parent/Guardian  First Name: <input type="text" value={firstName} onChange={(e) => setParentFirstName(e.target.value)} />
       </p>
       <p>
-        Parent/Guardian  Last Name: <input type="text" value={parentLastName} onChange={(e) => setParentLastName(e.target.value)} />
-      </p>
-      <p>
-        Email: <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        Parent/Guardian  Last Name: <input type="text" value={lastName} onChange={(e) => setParentLastName(e.target.value)} />
       </p>
       <p>
         Phone: <input type="tel" value={phoneNumber1} onChange={(e) => setPhoneNumber1(e.target.value)} />
