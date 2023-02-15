@@ -38,13 +38,14 @@ const SignUp = () => {
                 variables: { ...formState },  
             });
 
-            const { data } = await login({
+            const { loginData } = await login({
               variables: { ...formState },
             });
-            console.log("DATA:", data);
+            console.log("DATA:", loginData);
             console.log("signupData", signupData)
-          
-            Auth.login(data.login.token);
+            
+            Auth.login(signupData.login.token);
+            Auth.login(loginData.login.token);
         } catch (e) {
             console.error(e);
         }
@@ -67,7 +68,7 @@ const SignUp = () => {
             <div className="card">
               <h4 className="card-header p-2" style={styles.header}>Sign Up</h4>
               <div className="card-body">
-                {data ? (
+                {signupData ? (
                   <p>
                     Success! You may now head back
                   </p>
@@ -117,7 +118,7 @@ const SignUp = () => {
     
                 {error && (
                   <div className="my-3 p-3 bg-danger text-white">
-                    {error.message}
+                    {signupError.message}
                   </div>
                 )}
               </div>
