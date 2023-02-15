@@ -34,14 +34,9 @@ import Store from "./Store";
 import Success from "./Success";
 import Cancel from "./Cancel";
 
-import { Row, Col} from "react-bootstrap";
-import { productsArray } from "../productsStore";
-import ProductCard from "../components/ProductCard";
 import ShopNavComponent from "../components/ShopNav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CartProvider from "../CartProvider";
-
-import { Button, Container, Navbar, Modal } from "react-bootstrap";
 
 const Shop = () => {
   return (

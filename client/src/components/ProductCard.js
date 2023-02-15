@@ -1,9 +1,11 @@
 import { Card, Button, Form, Row, Col } from "react-bootstrap";
-import CartContext from "../CartContext";
+import CartProvider from "../CartProvider";
+import CartProduct from "./CartProduct";
+import { useContext } from "react";
 
 function ProductCard(props) {
   const product = props.product;
-  const cart = CartContext();
+  const cart = useContext(CartProvider);
   const productQuantity = cart.getProductQuantity(product.id);
   console.log(cart.items);
 

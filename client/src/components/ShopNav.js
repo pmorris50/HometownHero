@@ -1,11 +1,11 @@
 import { Button, Container, Navbar, Modal } from "react-bootstrap";
 import { useState, useContext } from "react";
-import CartContext from "../CartContext";
+import CartProvider from "../CartProvider";
 import CartProduct from "./CartProduct";
 
 function ShopNavComponent() {
-  const cart = useContext(CartContext.createContext);
-  console.log(cart);
+  const cart = useContext(CartProvider);
+  console.log(cart.items);
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);

@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import { productsArray, getProductData } from "./productsStore";
 
-const CartContext = createContext({
+export const CartContext = createContext({
   items: [],
   getProductQuantity: () => {},
   addOne: () => {},
@@ -10,8 +10,7 @@ const CartContext = createContext({
   getTotalCost: () => {},
 });
 
-
-export default function CartProvider({children}) {
+export default function CartProvider({ children }) {
   const [cartProducts, setCartProducts] = useState([]);
 
   const contextValue = {
@@ -79,45 +78,42 @@ export default function CartProvider({children}) {
     });
     return totalCost;
   }
+
   return (
     <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
   );
 }
 
+// function getProductQuantity(id) {
+//     const item = items.find((item) => item.id === id);
+//     return item ? item.quantity : 0;
+// }
 
+// function addOne(id) {
+//     const item = items.find((item) => item.id === id);
+//     if (item) {
+//         item.quantity++;
+//     } else {
+//         const product = productsArray.find((product) => product.id === id);
+//         setItems([...items, { ...product, quantity: 1 }]);
+//     }
+// }
 
-  // function getProductQuantity(id) {
-  //     const item = items.find((item) => item.id === id);
-  //     return item ? item.quantity : 0;
-  // }
+// function removeOne(id) {
+//     const item = items.find((item) => item.id === id);
+//     if (item) {
+//         if (item.quantity > 1) {
+//             item.quantity--;
+//         } else {
+//             clearFromCart(id);
+//         }
+//     }
+// }
 
-  // function addOne(id) {
-  //     const item = items.find((item) => item.id === id);
-  //     if (item) {
-  //         item.quantity++;
-  //     } else {
-  //         const product = productsArray.find((product) => product.id === id);
-  //         setItems([...items, { ...product, quantity: 1 }]);
-  //     }
-  // }
+// function clearFromCart(id) {
+//     setItems(items.filter((item) => item.id !== id));
+// }
 
-  // function removeOne(id) {
-  //     const item = items.find((item) => item.id === id);
-  //     if (item) {
-  //         if (item.quantity > 1) {
-  //             item.quantity--;
-  //         } else {
-  //             clearFromCart(id);
-  //         }
-  //     }
-  // }
-
-  // function clearFromCart(id) {
-  //     setItems(items.filter((item) => item.id !== id));
-  // }
-
-  // function getTotalCost() {
-  //     return items.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  // }
-
- 
+// function getTotalCost() {
+//     return items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+// }

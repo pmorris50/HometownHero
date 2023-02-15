@@ -35,11 +35,7 @@ const Navbar = () => {
                             (
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
-<<<<<<< HEAD
-                                        <Link to="/" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => { Auth.logout() , handleNavLinkClick}}>Logout</Link>
-=======
                                         <Link to="/" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => { Auth.logout() ;handleNavLinkClick()}}>Logout</Link>
->>>>>>> a5b7b04af7c05a51b66d24e19e08d2165246e60f
                                     </li>
                                     <li className="nav-item">
                                         <Link to='/' className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} aria-current="page" onClick={() => handleNavLinkClick()}>About</Link>
