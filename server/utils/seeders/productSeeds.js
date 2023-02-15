@@ -9,7 +9,7 @@ db.once('open', async () => {
       name: 'Baseball Cap',
       description:
         'Baseball Cap with camp logo.',
-      image: 'cookie-tin.jpg',
+      image: '#',
       price: 12.99,
       quantity: 20
     },
@@ -17,7 +17,7 @@ db.once('open', async () => {
       name: 'Sweatshirt',
       description:
         'Sweatshirt with camp logo.',
-      image: 'canned-coffee.jpg',
+      image: '#',
       price: 14.99,
       quantity: 20
     },
@@ -25,7 +25,7 @@ db.once('open', async () => {
       name: 'Long Sleeve Shirt',
       description:
         'Long-sleeve shirt with camp logo.',
-      image: 'toilet-paper.jpg',
+      image: '#',
       price: 17.99,
       quantity: 20
     },
@@ -33,7 +33,7 @@ db.once('open', async () => {
       name: 'Mouthguard',
       description:
         'Mouthguard protection.',
-      image: 'soap.jpg',
+      image: '#',
       price: 3.99,
       quantity: 20
     },
