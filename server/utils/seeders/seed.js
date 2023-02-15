@@ -14,49 +14,49 @@ db.once("open", async () => {
     await Camps.create(campSeeds);
 
     // create campers with camp and user fields
-    const campers = [];
-    for (const camperSeed of camperSeeds) {
-      const camp = await Camps.findOne({ name: camperSeed.title });
-      const user = await User.findOne({ email: camperSeed.email });
-      campers.push({
-        ...camperSeed,
-        camp: camp._id,
-        //user: user._id,
-      });
-    }
-    await Camper.deleteMany({});
-    await Camper.create(camperSeeds);
+    // const campers = [];
+    // for (const camperSeed of camperSeeds) {
+    //   const camp = await Camps.findOne({ name: camperSeed.title });
+    //   const user = await User.findOne({ email: camperSeed.email });
+    //   campers.push({
+    //     ...camperSeed,
+    //     camp: camp._id,
+    //     //user: user._id,
+    //   });
+    // }
+    // await Camper.deleteMany({});
+    // await Camper.create(camperSeeds);
 
-    // update camp field of each camper
-    for (const camper of campers) {
-      await Camper.findOneAndUpdate(
-        { _id: camper._id },
-        { $set: { camp: camper.camp } }
-      );
-    }
+    // // update camp field of each camper
+    // for (const camper of campers) {
+    //   await Camper.findOneAndUpdate(
+    //     { _id: camper._id },
+    //     { $set: { camp: camper.camp } }
+    //   );
+    // }
 
-    // update user field of each camper
-    for (const camper of campers) {
-      await Camper.findOneAndUpdate(
-        { _id: camper._id },
-        { $set: { user: camper.user } }
-      );
-    }
+    // // update user field of each camper
+    // for (const camper of campers) {
+    //   await Camper.findOneAndUpdate(
+    //     { _id: camper._id },
+    //     { $set: { user: camper.user } }
+    //   );
+    // }
 
-    // create emergencies
-    await Emergency.deleteMany({});
-    await Emergency.create(emergencySeeds);
+    // // create emergencies
+    // await Emergency.deleteMany({});
+    // await Emergency.create(emergencySeeds);
 
-    // update emergency field of each camper
-    for (const camper of campers) {
-      const emergency = await Emergency.findOne({ name: camper.emergency });
-      await Camper.findOneAndUpdate(
-        { _id: camper._id },
-        { $set: { emergency: emergency._id } }
-      );
-    }
+    // // update emergency field of each camper
+    // for (const camper of campers) {
+    //   const emergency = await Emergency.findOne({ name: camper.emergency });
+    //   await Camper.findOneAndUpdate(
+    //     { _id: camper._id },
+    //     { $set: { emergency: emergency._id } }
+    //   );
+    // }
 
-    console.log("all done!");
+    console.log("All done seeding!");
     process.exit(0);
   } catch (err) {
     throw err;
