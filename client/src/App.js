@@ -9,20 +9,18 @@ import {
 } from '@apollo/client';
 
 import { setContext } from '@apollo/client/link/context';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as HashRouter, Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import About from './pages/About'
 import Admin from './pages/Admin'
 import Header from './components/Header';
 import Footer from './components/Footer';
-import SignUp from './pages/Signup';
+import Signup from './pages/Signup';
 import Login from './pages/Login';
-import WebsiteContainer from './pages/WebsiteContainer';
 import RegistrationForm from './components/RegistrationForm';
 import Waiver from './components/Waiver';
 import Shop from './pages/Shop'
-import Admin from './pages/Admin';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -53,11 +51,12 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <div className="App">
+    
       <ApolloProvider client={client}>
-        <Router>
-          <div className="flex-column justify-flex-start min-100-vh">
+        <HashRouter>
+        <div className="flex-column justify-flex-start min-100-vh">
             <Header />
+          <div className="container">
             <Routes>
               <Route
                 path="/"
@@ -75,13 +74,17 @@ function App() {
                 path="/signup"
                 element={<Signup />}
               />
+              <Route 
+              path="/admin"
+              element={<Admin />}
+              />
             </Routes>
-            <Footer />
           </div>
-
-        </Router>
+            <Footer />
+      </div>
+        </HashRouter>
       </ApolloProvider>
-    </div>
+    
   );
 }
 
