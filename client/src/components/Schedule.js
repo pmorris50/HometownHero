@@ -9,7 +9,7 @@ export default function Schedule () {
 
     const [ loading, error, data ] = useQuery(QUERY_CAMPS);
 
-    const { camps } = data;
+    const camps = data;
 
     return (
         <div>

@@ -13,9 +13,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import About from './pages/About'
+import Admin from './pages/Admin'
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Signup from './pages/Signup';
+import SignUp from './pages/Signup';
 import Login from './pages/Login';
 import WebsiteContainer from './pages/WebsiteContainer';
 import RegistrationForm from './components/RegistrationForm';

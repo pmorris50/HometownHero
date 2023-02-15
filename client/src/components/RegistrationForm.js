@@ -33,6 +33,8 @@ const RegistrationForm = () => {
     const [gradeFinished, setGradeFinished] = useState("")
     const [tshirtSize, setTshirtSize] = useState("")
 
+    const [ addCamper, { error, data }] = useMutation(MUTATION_ADD_CAMPER);
+
     //camp info
     const [ campData, setCampData ] = useState({
       title: '',
@@ -41,9 +43,18 @@ const RegistrationForm = () => {
 
     })
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
       event.preventDefault();
-      return <Waiver/>;
+
+      const { data } = await addCamper({
+        variables: { firstName, lastName, age, gradeFinished, tshirtSize }
+      });
+
+      return (
+        <div>
+          <Waiver/>
+        </div>
+      );
       
     }
 
