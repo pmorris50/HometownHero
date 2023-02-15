@@ -43,14 +43,14 @@ const Navbar = () => {
                                     <li className="nav-item">
                                         <Link to="/shop" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick()}>Shop</Link>
                                     </li>
-                                    {/* {Auth.isAdmin() ?
+                                    {Auth.isAdmin() ?
                                         (
                                             <li className="nav-item">
                                                 <Link to="/admin" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick()}>Admin</Link>
                                             </li>
                                         ) : (
                                             <li></li>)
-                                    } */}
+                                    }
                                 </ul>
                             ) : (
                                 <ul className="navbar-nav">
