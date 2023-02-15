@@ -29,17 +29,20 @@ const camperSchema = new Schema({
     emergencyContact: [
         {
             type: Schema.Types.ObjectId,
-            ref: "emergency"
+            ref: "emergency",
+            required: false
         }
     ],
     waiverSigned: {
         type: Boolean,
-        required: true
+        required: true,
+        default: false,
     },
     campId: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'camp'
+            ref: 'camp',
+            required: false
         }
     ]
 })
