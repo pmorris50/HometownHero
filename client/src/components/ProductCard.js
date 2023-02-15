@@ -1,5 +1,5 @@
 import { Card, Button, Form, Row, Col } from "react-bootstrap";
-import CartProvider from "../CartProvider";
+import CartProvider from "./CartProvider";
 import CartProduct from "./CartProduct";
 import { useContext } from "react";
 

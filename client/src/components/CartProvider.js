@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
-import { productsArray, getProductData } from "./productsStore";
+import { productsArray, getProductData } from "../productsStore";
+import { Provider } from "react-redux";
 
 export const CartContext = createContext({
   items: [],
@@ -21,6 +22,7 @@ export default function CartProvider({ children }) {
     clearFromCart,
     getTotalCost,
   };
+  console.log(contextValue);
 
   function getProductQuantity(id) {
     const quantity = cartProducts.find(
