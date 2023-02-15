@@ -4,26 +4,39 @@ import Auth from '../utils/auth'
 
 const About = () => {
   const styles = {
-    
+
   };
 
   return (
     <div>
-      <main className="flex-row justify-center">
-        <img src="../images/football.jpg" alt="football" className="img" />
-        <div>
-          <h1 className="opacity-100 p-4">Information about our Camp</h1>
-        </div>
-        <div className="row justify-content-around m-4">
-          <div className="col col-5 justify-center border border-danger">
-            Skills
+      {Auth.loggedIn() ? (
+        <div>I am Logged in and this is about me</div>
+      ) 
+      : 
+      (
+        <main className="flex-row justify-center">
+          <img src="../images/football.jpg" alt="football" className="img" />
+          <div>
+            <h1 className="opacity-100 p-4">Premier Youth Football Camp</h1>
           </div>
-          <div className="col col-5 justify-center border border-info">
-            Testimonials
+          <div className="row justify-content-around m-4">
+            <div className="col col-5 justify-center border border-danger">  
+            <h2>Skills</h2>  
+              <ul className = 'list-group'>
+                <li className = 'list-group-item'>Catching</li>
+                <li className = 'list-group-item'>Route Running</li>
+                <li className = 'list-group-item'>Blocking</li>
+                <li className = 'list-group-item'>Film Study</li>
+              </ul>
+            </div>
+            <div className="col col-5 justify-center border border-info">
+              Professional Staff
+
+            </div>
           </div>
-        </div>
-      </main>
-    </div>
+        </main>
+      )}
+</div>
   );
 };
 

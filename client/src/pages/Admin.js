@@ -1,13 +1,15 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import FormModal from "../components/FormModal"
 import AddCamp from "../components/AdminComponents/AddCamp"
-
+import Auth from '../utils/auth'
 const AdminPage = () => {
     return (
         <div>
-        <AddCamp/>
+            {Auth.isAdmin() ? (
+                <div>
+                    <AddCamp />
+                </div>) : ""}
         </div>
-
     )
 }
 

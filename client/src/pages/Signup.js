@@ -15,8 +15,7 @@ const SignUp = () => {
         password: '',
     });
     
-    const [addUser, { signupError, signupData }] = useMutation(MUTATION_SIGN_UP);
-    const [login, { loginError, loginData }] = useMutation(MUTATION_LOGIN);
+    const [addUser, { error, data }] = useMutation(MUTATION_SIGN_UP);
 
 
     const handleChange = (event) => {
@@ -34,18 +33,13 @@ const SignUp = () => {
         console.log(formState);
 
         try {
-            const { signupData } = await addUser({
+            const { data } = await addUser({
                 variables: { ...formState },  
             });
 
-            const { loginData } = await login({
-              variables: { ...formState },
-            });
-            console.log("DATA:", loginData);
-            console.log("signupData", signupData)
+            console.log("DATA:", data);
             
-            Auth.login(signupData.login.token);
-            Auth.login(loginData.login.token);
+            Auth.login(data.login.token);
         } catch (e) {
             console.error(e);
         }
@@ -68,7 +62,7 @@ const SignUp = () => {
             <div className="card">
               <h4 className="card-header p-2" style={styles.header}>Sign Up</h4>
               <div className="card-body">
-                {signupData ? (
+                {data ? (
                   <p>
                     Success! You may now head back
                   </p>
@@ -118,7 +112,7 @@ const SignUp = () => {
     
                 {error && (
                   <div className="my-3 p-3 bg-danger text-white">
-                    {signupError.message}
+                    {error.message}
                   </div>
                 )}
               </div>

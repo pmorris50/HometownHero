@@ -21,7 +21,7 @@ db.once("open", async () => {
       campers.push({
         ...camperSeed,
         camp: camp._id,
-        user: user._id,
+        //user: user._id,
       });
     }
     await Camper.deleteMany({});
