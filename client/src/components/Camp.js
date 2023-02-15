@@ -27,7 +27,6 @@ export default function Camp() {
                                 <div>
                                     <button onClick={() => setShowModal(true)}>Register</button>
                                     <FormModal showModal={showModal} setShowModal={setShowModal}>
-                                        <Waiver/>
                                         <RegistrationForm />
                                     </FormModal>
                                 </div>

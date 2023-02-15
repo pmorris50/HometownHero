@@ -58,9 +58,16 @@ const RegistrationForm = () => {
     const handleSubmit = async (event) => {
       event.preventDefault();
 
-      const { data } = await addCamper({
-        variables: { firstName, lastName, age, gradeFinished, tshirtSize }
-      });
+      try {
+        const { data } = await addCamper({
+          variables: { firstName, lastName, age, gradeFinished, tshirtSize },  
+        });
+
+        console.log("DATA:", data);
+        
+      } catch (e) { 
+        console.error(e);
+      }
 
       return (
         <div>
@@ -98,7 +105,7 @@ const RegistrationForm = () => {
         <div>
           {/* <label className="form-label" htmlFor="age">Enter your camper's age:</label> */}
           <input
-            type="number"
+            type="text"
             id="age"
             value={age}
             className="form-control loginbtn my-3"

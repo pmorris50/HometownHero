@@ -63,12 +63,12 @@ export const MUTATION_ADD_CAMPER = gql`
   mutation AddCamper(
     $firstName: String!
     $lastName: String!
-    $age: Int!
-    $gradeFinished: Int!
+    $age: String!
+    $gradeFinished: String!
     $tshirtSize: String!
-    $emergencyContact: [ID]!
-    $waiverSigned: Boolean!
-    $campId: ID!
+    $emergencyContact: [ID]
+    $waiverSigned: Boolean
+    $campId: ID
   ) {
     addCamper(
       firstName: $firstName

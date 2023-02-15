@@ -22,10 +22,10 @@ const typeDefs = gql`
 
     type Camp {
     _id: ID
-    title: String!
-    location: String!
-    date: String!
-    price: Float!
+    title: String
+    location: String
+    date: String
+    price: Float
     campers: [Camper]
     }
 
@@ -33,8 +33,8 @@ const typeDefs = gql`
     _id: ID
     firstName: String!
     lastName: String!
-    age: Int!
-    gradeFinished: Int!
+    age: String!
+    gradeFinished: String!
     tshirtSize: String!
     emergencyContact: [Emergency]
     waiverSigned: Boolean
@@ -83,8 +83,8 @@ const typeDefs = gql`
     signUp(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     addOrder(products: [ID]!): Order
     login(email: String!, password: String!): Auth
-    addCamp(title: String!, location: String!, date: String!, price: Float!): Camp
-    addCamper(firstName: String!, lastName: String!, age: Int!, gradeFinished: Int!, tshirtSize: String!, emergencyContact: [ID], waiverSigned: Boolean, campId: ID): Camper
+    addCamp(title: String, location: String, date: String, price: Float): Camp
+    addCamper(firstName: String!, lastName: String!, age: String!, gradeFinished: String!, tshirtSize: String!, emergencyContact: [ID], waiverSigned: Boolean, campId: ID): Camper
     addEmergency(firstName: String!, lastName: String!, phoneNumber1: String!, phoneNumber2: String!, camperId: ID!): Emergency
     }
 `;
