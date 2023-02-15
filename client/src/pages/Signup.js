@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { MUTATION_SIGN_UP } from '../utils/mutations';
+import { MUTATION_SIGN_UP, MUTATION_LOGIN } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 import './Signup.css';
 import Auth from '../utils/auth';
@@ -15,7 +15,9 @@ const SignUp = () => {
         password: '',
     });
     
-    const [addUser, { error, data }] = useMutation(MUTATION_SIGN_UP);
+    const [addUser, { signupError, signupData }] = useMutation(MUTATION_SIGN_UP);
+    const [login, { loginError, loginData }] = useMutation(MUTATION_LOGIN);
+
 
     const handleChange = (event) => {
 
@@ -32,16 +34,19 @@ const SignUp = () => {
         console.log(formState);
 
         try {
-            const { data } = await addUser({
-                variables: { ...formState },
-                
+            const { signupData } = await addUser({
+                variables: { ...formState },  
             });
 
+            const { data } = await login({
+              variables: { ...formState },
+            });
+            console.log("DATA:", data);
+            console.log("signupData", signupData)
           
-            Auth.login(data.addUser.token);
+            Auth.login(data.login.token);
         } catch (e) {
             console.error(e);
-            console.log(data + "This is the data");
         }
     };
     
