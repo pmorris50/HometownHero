@@ -35,7 +35,7 @@ const Navbar = () => {
                             (
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
-                                        <Link to="/" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => { Auth.logout() ,handleNavLinkClick}}>Logout</Link>
+                                        <Link to="/" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => { Auth.logout() , handleNavLinkClick}}>Logout</Link>
                                     </li>
                                     <li className="nav-item">
                                         <Link to='/' className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} aria-current="page" onClick={() => handleNavLinkClick}>About</Link>
@@ -43,14 +43,14 @@ const Navbar = () => {
                                     <li className="nav-item">
                                         <Link to="/shop" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick}>Shop</Link>
                                     </li>
-                                    {Auth.isAdmin() ?
+                                    {/* {Auth.isAdmin() ?
                                         (
                                             <li className="nav-item">
                                                 <Link to="/admin" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick}>Admin</Link>
                                             </li>
                                         ) : (
                                             <li></li>)
-                                    }
+                                    } */}
                                 </ul>
                             ) : (
                                 <ul className="navbar-nav">
