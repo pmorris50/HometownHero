@@ -35,18 +35,18 @@ const Navbar = () => {
                             (
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
-                                        <Link to="/" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => { Auth.logout() ,handleNavLinkClick}}>Logout</Link>
+                                        <Link to="/" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => { Auth.logout() ;handleNavLinkClick()}}>Logout</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to='/' className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} aria-current="page" onClick={() => handleNavLinkClick}>About</Link>
+                                        <Link to='/' className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} aria-current="page" onClick={() => handleNavLinkClick()}>About</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to="/shop" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick}>Shop</Link>
+                                        <Link to="/shop" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick()}>Shop</Link>
                                     </li>
                                     {Auth.isAdmin() ?
                                         (
                                             <li className="nav-item">
-                                                <Link to="/admin" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick}>Admin</Link>
+                                                <Link to="/admin" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick()}>Admin</Link>
                                             </li>
                                         ) : (
                                             <li></li>)
@@ -55,16 +55,16 @@ const Navbar = () => {
                             ) : (
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
-                                        <Link to='/' className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'}  aria-current="page" onClick={() => handleNavLinkClick}>About</Link>
+                                        <Link to='/' className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'}  aria-current="page" onClick={() => handleNavLinkClick()}>About</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to="/login" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick}>Login</Link>
+                                        <Link to="/login" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick()}>Login</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to="/signup" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick}>Signup</Link>
+                                        <Link to="/signup" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick()}>Signup</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to="/shop" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick}>Shop</Link>
+                                        <Link to="/shop" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick()}>Shop</Link>
                                     </li>
                                 </ul>
                             )
