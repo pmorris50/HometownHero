@@ -37,11 +37,11 @@ const SignUp = () => {
                 
             });
 
-          
+            
+            console.log(data + "This is the data");
             Auth.login(data.addUser.token);
         } catch (e) {
             console.error(e);
-            console.log(data + "This is the data");
         }
     };
     

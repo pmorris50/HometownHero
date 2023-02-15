@@ -4,34 +4,53 @@
         "lastName": "Smith",
         "email": "j@test.com",
         "password": "123",
-        "campers": [] 
+        "adminAccess": false,
+        "camps": [],
+        "campers": []
     },
     {
         "firstName": "Bob",
         "lastName": "Jones",
         "email": "b@test.com",
         "password": "123",
-        "campers": [] 
+        "adminAccess": false,
+        "camps": [],
+        "campers": []
     },
     {
         "firstName": "Abby",
         "lastName": "Collins",
         "email": "a@test.com",
         "password": "123",
-        "campers": [] 
+        "adminAccess": false,
+        "camps": [],
+        "campers": []
     },
     {
         "firstName": "Rob",
         "lastName": "Cook",
         "email": "r@test.com",
         "password": "123",
-        "campers": [] 
+        "adminAccess": false,
+        "camps": [],
+        "campers": []
     },
     {
         "firstName": "Sean",
         "lastName": "Michaels",
         "email": "s@test.com",
         "password": "123",
-        "campers": [] 
+        "adminAccess": false,
+        "camps": [],
+        "campers": []
+    },
+    {
+        "firstName": "Allen",
+        "lastName": "Lazard",
+        "email": "Allen@gmail.com",
+        "password": "123",
+        "adminAccess": true,
+        "camps": [],
+        "campers": []
     }
 ]
