@@ -26,7 +26,7 @@ const Navbar = () => {
         <div>
             <nav className="navbar navbar-expand-lg navbar-light" style={styles.customHeader}>
                 <div className="container-fluid">
-                    <h1 style={styles.title}> I am a Header</h1>
+                    <h1 style={styles.title}>Hometown Hero</h1>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -35,18 +35,22 @@ const Navbar = () => {
                             (
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
+<<<<<<< HEAD
                                         <Link to="/" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => { Auth.logout() , handleNavLinkClick}}>Logout</Link>
+=======
+                                        <Link to="/" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => { Auth.logout() ;handleNavLinkClick()}}>Logout</Link>
+>>>>>>> a5b7b04af7c05a51b66d24e19e08d2165246e60f
                                     </li>
                                     <li className="nav-item">
-                                        <Link to='/' className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} aria-current="page" onClick={() => handleNavLinkClick}>About</Link>
+                                        <Link to='/' className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} aria-current="page" onClick={() => handleNavLinkClick()}>About</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to="/shop" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick}>Shop</Link>
+                                        <Link to="/shop" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick()}>Shop</Link>
                                     </li>
                                     {/* {Auth.isAdmin() ?
                                         (
                                             <li className="nav-item">
-                                                <Link to="/admin" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick}>Admin</Link>
+                                                <Link to="/admin" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick()}>Admin</Link>
                                             </li>
                                         ) : (
                                             <li></li>)
@@ -55,16 +59,16 @@ const Navbar = () => {
                             ) : (
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
-                                        <Link to='/' className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'}  aria-current="page" onClick={() => handleNavLinkClick}>About</Link>
+                                        <Link to='/' className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'}  aria-current="page" onClick={() => handleNavLinkClick()}>About</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to="/login" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick}>Login</Link>
+                                        <Link to="/login" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick()}>Login</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to="/signup" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick}>Signup</Link>
+                                        <Link to="/signup" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick()}>Signup</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to="/shop" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick}>Shop</Link>
+                                        <Link to="/shop" className={activeLink === 'Logout' ? 'nav-link active' : 'nav-link'} onClick={() => handleNavLinkClick()}>Shop</Link>
                                     </li>
                                 </ul>
                             )

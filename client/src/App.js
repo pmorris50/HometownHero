@@ -8,14 +8,9 @@ import {
   createHttpLink,
 } from "@apollo/client";
 
-import { setContext } from "@apollo/client/link/context";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  BrowserRouter,
-} from "react-router-dom";
-import { Link } from "react-router-dom";
+import { setContext } from '@apollo/client/link/context';
+import { BrowserRouter as HashRouter, Routes, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import About from "./pages/About";
 import Header from "./components/Header";
@@ -58,8 +53,9 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <ApolloProvider client={client}>
-      <Router>
+    
+      <ApolloProvider client={client}>
+        <HashRouter>
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
           <div className="container">
@@ -73,10 +69,11 @@ function App() {
               <Route path="/admin" element={<Admin />} />
             </Routes>
           </div>
-          <Footer />
-        </div>
-      </Router>
-    </ApolloProvider>
+            <Footer />
+      </div>
+        </HashRouter>
+      </ApolloProvider>
+    
   );
 }
 

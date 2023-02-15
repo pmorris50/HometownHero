@@ -37,10 +37,9 @@ const typeDefs = gql`
     gradeFinished: Int!
     tshirtSize: String!
     emergencyContact: [Emergency]
-    waiverSigned: Boolean!
+    waiverSigned: Boolean
     campId: Camp
-    userId: User
-  }
+    }
 
   type Emergency {
     _id: ID
@@ -105,9 +104,9 @@ const typeDefs = gql`
       age: Int!
       gradeFinished: Int!
       tshirtSize: String!
-      emergencyContact: [ID]!
-      waiverSigned: Boolean!
-      campId: ID!
+      emergencyContact: [ID]
+      waiverSigned: Boolean
+      campId: ID
     ): Camper
     addEmergency(
       firstName: String!
