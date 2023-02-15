@@ -37,7 +37,7 @@ export const MUTATION_LOGIN = gql`
 `;
 
 export const MUTATION_ADD_CAMP = gql`
-  mutation AddCamp($title: String!, $location: String!, $date: String!, $price: Float!) {
+  mutation AddCamp($title: String, $location: String, $date: String, $price: String) {
   addCamp(title: $title, location: $location, date: $date, price: $price) {
     _id
     campers {
@@ -63,12 +63,12 @@ export const MUTATION_ADD_CAMPER = gql`
   mutation AddCamper(
     $firstName: String!
     $lastName: String!
-    $age: Int!
-    $gradeFinished: Int!
+    $age: String!
+    $gradeFinished: String!
     $tshirtSize: String!
-    $emergencyContact: [ID]!
-    $waiverSigned: Boolean!
-    $campId: ID!
+    $emergencyContact: [ID] 
+    $waiverSigned: Boolean
+    $campId: ID 
   ) {
     addCamper(
       firstName: $firstName
@@ -104,10 +104,10 @@ export const MUTATION_ADD_CAMPER = gql`
 
 export const MUTATION_ADD_EMERGENCY = gql`
   mutation AddEmergency(
-    $firstName: String!
-    $lastName: String!
-    $phoneNumber1: String!
-    $phoneNumber2: String!
+    $firstName: String
+    $lastName: String
+    $phoneNumber1: String
+    $phoneNumber2: String
   ) {
     addEmergency(
       firstName: $firstName

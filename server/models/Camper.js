@@ -14,11 +14,11 @@ const camperSchema = new Schema({
         trim: true
     },
     age: {
-        type: Number,
+        type: String,
         required: true
     },
     gradeFinished: {
-        type: Number,
+        type: String,
         required: true
     },
     tshirtSize: {
