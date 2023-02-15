@@ -12,7 +12,7 @@ const campSchema = new Schema ({
         trim: true
     },
     date: {
-        type: Date,
+        type: String,
     },
     price: {
         type: Number,

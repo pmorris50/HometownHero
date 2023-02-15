@@ -37,7 +37,7 @@ export const MUTATION_LOGIN = gql`
 `;
 
 export const MUTATION_ADD_CAMP = gql`
-  mutation AddCamp($title: String!, $location: String!, $date: String!, $price: Float!) {
+  mutation AddCamp($title: String, $location: String, $date: String, $price: String) {
   addCamp(title: $title, location: $location, date: $date, price: $price) {
     _id
     campers {
