@@ -11,9 +11,12 @@ class AuthService {
   }
 
   isAdmin() {
-    const token = this.getToken();
-    console.log(token);
-    return token.data.adminAccess // admin access is boolean
+    console.log("RUNNING")
+    var token = this.getToken();
+    const decoded = decode(token)
+    console.log("TOKEN", decoded); 
+    console.log("am I an Admin?" ,decoded.data.adminAccess)
+    return decoded.data.adminAccess // admin access is boolean 
   }
 
   isTokenExpired(token) {
