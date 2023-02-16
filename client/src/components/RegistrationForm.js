@@ -17,6 +17,9 @@ const RegistrationForm = ({ campId }) => {
     button: {
       color: "#FFB612",
       backgroundColor: "#203731"
+    },
+    alignCenter: {
+      textAlign: "center"
     }
   }
 
@@ -68,6 +71,7 @@ const RegistrationForm = ({ campId }) => {
             type="text"
             id="first-name"
             value={firstName}
+            style={styles.alignCenter}
             className="form-control loginbtn my-3"
             placeholder="Enter your camper's first name"
             onChange={(e) => setFirstName(e.target.value)}
@@ -79,6 +83,7 @@ const RegistrationForm = ({ campId }) => {
             type="text"
             id="last-name"
             value={lastName}
+            style={styles.alignCenter}
             className="form-control loginbtn my-3"
             placeholder="Enter your camper's last name"
             onChange={(e) => setLastName(e.target.value)}
@@ -90,6 +95,7 @@ const RegistrationForm = ({ campId }) => {
             type="text"
             id="age"
             value={age}
+            style={styles.alignCenter}
             className="form-control loginbtn my-3"
             placeholder="Enter your camper's age"
             onChange={(e) => setAge(e.target.value)}
@@ -101,6 +107,7 @@ const RegistrationForm = ({ campId }) => {
             type="text"
             id="grade-finished"
             value={gradeFinished}
+            style={styles.alignCenter}
             className="form-control loginbtn my-3"
             placeholder="What grade is your camper in?"
             onChange={(e) => setGradeFinished(e.target.value)}
@@ -112,6 +119,7 @@ const RegistrationForm = ({ campId }) => {
             type="text"
             id="tshirt-size"
             value={tshirtSize}
+            style={styles.alignCenter}
             className="form-control loginbtn my-3"
             placeholder="Select a T-shirt Size"      
             onChange={(e) => setTshirtSize(e.target.value)}
