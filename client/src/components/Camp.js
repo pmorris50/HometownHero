@@ -26,6 +26,12 @@ export default function Camp() {
       }
     };
 
+    function getFirstFourItems(dateString) {
+      const items = dateString.split(' ');
+      const sliced = items.slice(0, 4);
+      return sliced.join(' ');
+    }
+
     return (
         <div id="camps-carousel" className="carousel slide" data-bs-ride="carousel" data-bs-interval = "false">
         <div className="carousel-inner">
@@ -38,7 +44,7 @@ export default function Camp() {
               <div className="card mt-4 text-center">
                 <h1 className="card-header"style={styles.font}>{camp.title}</h1>
                 <div className="card-body lead">
-                  <p>Date: {camp.date}</p>
+                  <p>Date: {getFirstFourItems(camp.date)}</p>
                   <p>Location: {camp.location}</p>
                   <p>Price: ${camp.price}</p>
                   {Auth.loggedIn() ? (

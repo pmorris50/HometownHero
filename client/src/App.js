@@ -59,6 +59,7 @@ function App() {
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
           <div className="container">
+            <img src='./images/football.jpg' alt="football" className="img" />
             <Routes>
               <Route path="/" element={<About />} />
               <Route path="/login" element={<Login />} />
