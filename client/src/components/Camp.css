@@ -33,3 +33,13 @@
 .carousel-control-next-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 8 8'%3e%3cpath d='M2 1.5v2.5h-1.5v3h1.5v2.5l3-3-3-3z' /%3e%3c/svg%3e");
 }
+
+.carousel {
+  width: 600px;
+  height: 300px;
+}
+
+.card {
+  border-radius: 25px;
+  height: 100px;
+}
