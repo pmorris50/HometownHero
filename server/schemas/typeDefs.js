@@ -39,14 +39,14 @@ const typeDefs = gql`
     emergencyContact: [Emergency]
     waiverSigned: Boolean
     campId: Camp
-    }
+  }
 
   type Emergency {
     _id: ID
     fullName: String
     phoneNumber1: String
     phoneNumber2: String
-    }
+  }
 
   type Product {
     _id: ID
@@ -114,6 +114,19 @@ const typeDefs = gql`
       camperId: ID
     ): Emergency
     addOrder(products: [ID]!): Order
+    # addUser(
+    #   firstName: String!
+    #   lastName: String!
+    #   email: String!
+    #   password: String!
+    # ): Auth
+    # updateUser(
+    #   firstName: String
+    #   lastName: String
+    #   email: String
+    #   password: String
+    # ): User
+    # updateProduct(_id: ID!, quantity: Int!): Product
   }
 `;
 

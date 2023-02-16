@@ -36,14 +36,14 @@ import Cancel from "./Cancel";
 
 import ShopNavComponent from "../components/ShopNav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CartProvider from "../components/CartProvider";
+import CartProvider from "../CartContext";
 
 
 const Shop = () => {
   return (
     <CartProvider>
       <div className="container">
-        <ShopNavComponent>
+        <ShopNavComponent/>
           <BrowserRouter>
           <Routes>
             <Route index element={<Store />} />
@@ -51,7 +51,6 @@ const Shop = () => {
             <Route path="cancel" element={<Cancel />} />
             </Routes>
           </BrowserRouter>
-        </ShopNavComponent>
       </div>
     </CartProvider>
   );

@@ -6,36 +6,32 @@ db.once('open', async () => {
 
   const products = await Product.insertMany([
     {
-      name: 'Baseball Cap',
-      description:
-        'Baseball Cap with camp logo.',
-      image: '#',
-      price: 12.99,
-      quantity: 20
+      name: "Baseball Cap",
+      description: "Baseball Cap with camp logo.",
+      image: "#",
+      price: "price_1McAF2AoWLJeiXgFFmA6NpHK",
+      quantity: 20,
     },
     {
-      name: 'Sweatshirt',
-      description:
-        'Sweatshirt with camp logo.',
-      image: '#',
-      price: 14.99,
-      quantity: 20
+      name: "Sweatshirt",
+      description: "Sweatshirt with camp logo.",
+      image: "#",
+      price: "price_1McAGQAoWLJeiXgFHE5iDvhe",
+      quantity: 20,
     },
     {
-      name: 'Long Sleeve Shirt',
-      description:
-        'Long-sleeve shirt with camp logo.',
-      image: '#',
-      price: 17.99,
-      quantity: 20
+      name: "Long Sleeve Shirt",
+      description: "Long-sleeve shirt with camp logo.",
+      image: "#",
+      price: "price_1McAHdAoWLJeiXgF7XKzxjGK",
+      quantity: 20,
     },
     {
-      name: 'Mouthguard',
-      description:
-        'Mouthguard protection.',
-      image: '#',
-      price: 3.99,
-      quantity: 20
+      name: "Mouthguard",
+      description: "Mouthguard protection.",
+      image: "#",
+      price: 'price_1McAITAoWLJeiXgFAotqPC4d',
+      quantity: 20,
     },
   ]);
 
