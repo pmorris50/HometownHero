@@ -8,3 +8,12 @@
     right: 0;
     width: 100%;
 }
+
+.list-group .list-group-item {
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.staffDescription {
+    font-size: 30px;
+}
