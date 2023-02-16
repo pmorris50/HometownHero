@@ -52,7 +52,12 @@ const Waiver = ({ camperFirstName, camperLastName }) => {
     button: {
       color: "#FFB612",
       backgroundColor: "#203731"
-    }
+    },
+    input: {
+      textAlign: "center",
+      border: "1px solid #ced4da",
+      padding: "0.375rem 0.75rem",
+    },
   };
 
   return (
@@ -60,7 +65,7 @@ const Waiver = ({ camperFirstName, camperLastName }) => {
       <form onSubmit={handleSubmit}>
         <h2 style={styles.aboutInfo}>Youth Sports Camp Waiver</h2>
         <p className="lead">
-          I, <input className="signupBtn" type="text" value={fullName} onChange={(e) => {setFullName(e.target.value) }} />,
+          I, <input style={styles.input} className="signupBtn" type="text" value={fullName} onChange={(e) => {setFullName(e.target.value) }} />,
           as the parent or legal guardian of the participating youth,
           do hereby release and hold harmless the Youth Sports Camp and its officers, directors,
           employees, and agents from any and all claims, demands, damages, or rights of action,
@@ -68,28 +73,25 @@ const Waiver = ({ camperFirstName, camperLastName }) => {
           including death, that may be sustained by the participating youth while participating in the camp activities.
         </p>
         <p className="lead">
-          Camper First Name: <input className="signupBtn" type="text" value={camperFirstName} />
+         <input style={styles.input} placeholder="Camper First Name" className="signupBtn w-50" type="text" value={camperFirstName} />
         </p>
         <p className="lead">
-          Camper Last Name: <input className="signupBtn" type="text" value={camperLastName}  />
+         <input  style={styles.input} placeholder="Camper Last Name" className="signupBtn w-50" type="text" value={camperLastName}  />
         </p>
         <p className="lead" >
-          Parent/Guardian  Full Name: <input className="signupBtn" type="text" value={fullName} onChange={(e) => {setFullName(e.target.value)}} />
-        </p>
-        {/* <p>
-          Parent/Guardian  Last Name: <input type="text" value={lastName} onChange={(e) => {setLastName(e.target.value)}} />
-        </p> */}
-        <p className="lead">
-          Phone: <input className="signupBtn" type="tel" value={phoneNumber1} onChange={(e) => setPhoneNumber1(e.target.value)} />
+           <input style={styles.input} placeholder="Parent/Guardian Full Name" className="w-50 signupBtn" type="text" value={fullName} onChange={(e) => {setFullName(e.target.value)}} />
         </p>
         <p className="lead">
-          Alternate Phone: <input className="signupBtn" type="tel" value={phoneNumber2} onChange={(e) => setPhoneNumber2(e.target.value)} />
+        <input style={styles.input} placeholder="Phone" className=" w-50 signupBtn" type="tel" value={phoneNumber1} onChange={(e) => setPhoneNumber1(e.target.value)} />
+        </p>
+        <p className="lead">
+          <input style={styles.input} placeholder="Alternate Phone" className=" w-50 signupBtn" type="tel" value={phoneNumber2} onChange={(e) => setPhoneNumber2(e.target.value)} />
         </p>
         <p className="form-label">
           <input className="m-1" type="checkbox" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} />
           I have read and agreed to the terms of this waiver.
         </p>
-        <button className="signupBtn p-1 m-3" type="submit" style={styles.button} disabled={!agreed}>Submit</button>
+        <button className="signupBtn btn btn-primary m-3" type="submit" style={styles.button} disabled={!agreed}>Submit</button>
       </form>
     </div>
   );
