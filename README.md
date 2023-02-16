@@ -19,16 +19,19 @@ Open this application using the website linked below.
 
 
 ## Technology
-This application follows the Model-View-Controller paradigm. It uses Handlebars.js for the Views, MySQL2 and Sequelize for the database models and an Express.js back end for the Controller. There is also the ability to sign in using your Google id and password.  It also uses bcrypt to hash passwords and express-session and connect-session-sequelize for authentication. It is deployed using Heroku.
+This application uses a React front end. MongoDB is used to store the data and the backend uses express and node. It is deployed using Heroku.
 
 
 ## Usage
-This website opens on the home page where there is a summary promoting the camps objectives and a list of the locations and dates of upcoming camps. The user may enter the shop but must sign up or login to navigate off the home page for any other purpose.
+This website is designed for a professional/semi-professional athlete to easily use as a template for signing up registrations for a day camp. It is designed to be easily customizable for different sports. The color scheme can also be adjusted to reflect team or university colors.
 
-Once the user has logged in, the list of available camps is shown with a registration button. When the user clicks on Register, the Registration Form is brought up. When the form is filled out, the waiver form is brought up. 
+The home page has a summary promoting the camp's objectives and a list of the locations and dates of upcoming camps. The user may enter the shop but must sign up or login to navigate off the home page for any other purpose.
+
+Once the user has logged in, the list of available camps is shown with a registration button. When the user clicks on Register, the Registration Form is brought up. Once the form is filled out, the waiver form is brought up. Once the waiver form is signed, the user will be brought to the shop to complete the purchase.
 
 
 ## Issues
+Deployment is not currently functional through Heroku. There is an issue with the routing that is still being investigated by Prof. Joe Han.
 
 
 ## Credits
