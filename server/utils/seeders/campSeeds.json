@@ -1,20 +1,20 @@
 [
     {
         "title": "Training drills Camp Day",
-        "location": "Locah High School",
-        "date": "2023-06-01",
-        "price": 100
+        "location": "Local High School",
+        "date": "03/06/2023",
+        "price": 50
     },
     {
         "title": "Blocking training Camp Day",
         "location": "Local High School",
-        "date": "2023-06-01",
-        "price": 100
+        "date": "03/07/2023",
+        "price": 50
     },
     {
         "title": "Film Study Camp",
         "location": "Local Middle school",
-        "date": "2023-06-01",
-        "price": 100
+        "date": "03/08/2023",
+        "price": 50
     }
 ]
