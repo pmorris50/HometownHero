@@ -6,33 +6,46 @@ import Auth from '../utils/auth';
 import FormModal from './FormModal';
 import Waiver from './Waiver';
 import "./Camp.css"
+import '../pages/Signup.css';
 
 export default function Camp() {
 
     const { data } = useQuery(QUERY_CAMPS);
-    console.log(data);
+    // console.log(data);
 
     const [showModal, setShowModal] = useState(false)
+
+    const styles = {
+      font: {
+        fontFamily: 'Josefin Sans, sans-serif',
+        fontSize: '35px',
+      },
+      button: {
+        color: "#FFB612",
+        backgroundColor: "#203731"
+      }
+    };
 
     return (
         <div id="camps-carousel" className="carousel slide" data-bs-ride="carousel" data-bs-interval = "false">
         <div className="carousel-inner">
+            
           {data && data.camps.map((camp, index) => (
             <div
               key={camp._id}
               className={`carousel-item ${index === 0 ? 'active' : ''}`}
             >
               <div className="card mt-4 text-center">
-                <h1 className="card-header">{camp.title}</h1>
-                <div className="card-body">
+                <h1 className="card-header"style={styles.font}>{camp.title}</h1>
+                <div className="card-body lead">
                   <p>Date: {camp.date}</p>
                   <p>Location: {camp.location}</p>
                   <p>Price: ${camp.price}</p>
                   {Auth.loggedIn() ? (
                     <div>
-                      <button onClick={() => setShowModal(true)}>Register</button>
+                      <button style={styles.button} className="btn btn-primary signupBtn" onClick={() => setShowModal(true)}>Register</button>
                       <FormModal showModal={showModal} setShowModal={setShowModal}>
-                        <RegistrationForm />
+                        <RegistrationForm campId={camp._id}/>
                       </FormModal>
                     </div>
                   ) : null}
@@ -62,3 +75,4 @@ export default function Camp() {
       </div>
     );
 }
+

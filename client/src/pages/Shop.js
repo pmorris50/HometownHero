@@ -38,18 +38,6 @@ import ShopNavComponent from "../components/ShopNav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CartProvider from "../components/CartProvider";
 
-// const express = require('express');
-// const app = express();
-// const PORT = process.env.PORT || 3001;
-// app.use(express.urlencoded({ extended: false }));
-// app.use(express.json());
-// app.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../client/build/index.html'));
-// });
-// app.listen(PORT, () => {
-//   console.log(`API server running on port ${PORT}!`)
-// })
-
 
 const Shop = () => {
   return (
