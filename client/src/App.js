@@ -53,13 +53,13 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    
-      <ApolloProvider client={client}>
-        <HashRouter>
+
+    <ApolloProvider client={client}>
+      <HashRouter>
         <div className="flex-column justify-flex-start min-100-vh">
+            <img src='./images/football3.jpeg' alt="football" className="img img-fluid" />
           <Header />
-          <div className="container">
-            <img src='./images/football.jpg' alt="football" className="img" />
+          <Container>
             <Routes>
               <Route path="/" element={<About />} />
               <Route path="/login" element={<Login />} />
@@ -69,12 +69,12 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/admin" element={<Admin />} />
             </Routes>
-          </div>
-            <Footer />
-      </div>
-        </HashRouter>
-      </ApolloProvider>
-    
+          </Container>
+          <Footer />
+        </div>
+      </HashRouter>
+    </ApolloProvider>
+
   );
 }
 
