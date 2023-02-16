@@ -16,12 +16,34 @@
     background-color: #fff;
 }
 
-.staffDescription {
+.staffDescription{
     font-size: 30px;
     background-color: #fff;
+    opacity: .7;
     padding: 10px 10px 10px;
     border-radius: 25px;
     line-height: 60px;
+    font-weight: bold;
+}
+
+.list-context {
+    background-color: #fff;
+    font-size: 30px;
+    line-height: 44px;
+    font-weight: bold;
+    opacity: .7;
+    padding: 10px 10px 10px;
+    list-style-type: none;
+}
+
+.start{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.end {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .aboutInfo {
@@ -31,6 +53,16 @@
 
 .aboutTitle {
     font-family: 'Josefin Sans', sans-serif;
+    font-size: 55px;
+    color: #9d4a40;
+    text-shadow: 2px 2px 1px black;
+}
+.schedule {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 45px;
+    color: #FFB612;
+    margin-top: 20px;
+    text-shadow: 4px 4px 6px black;
 }
 
 .skills,
@@ -38,4 +70,6 @@
     font-family: 'Josefin Sans', sans-serif;
     font-size: 40px;
     line-height: 70px;
+    color: #9d4a40;
+    text-shadow: 1px 1px 1px black;
 }
