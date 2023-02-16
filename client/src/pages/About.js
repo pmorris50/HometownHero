@@ -37,7 +37,7 @@ const About = () => {
                 <h2 className="text-center colHeader">Professional Staff</h2>
                 <p className="staffDescription text-center">Ensure that your children are getting the most out of their experience with staff that have experience playing or training as a professional athlete. </p>
               </div>
-              <h1 className="text-center">Camp Schedule</h1>
+              <h1 className="text-center mt-5">Camp Schedule</h1>
               <Camp />
             </div>
           </main>
