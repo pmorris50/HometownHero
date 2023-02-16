@@ -25,9 +25,13 @@ This application uses a React front end. MongoDB is used to store the data and t
 ## Usage
 This website is designed for a professional/semi-professional athlete to easily use as a template for signing up registrations for a day camp. It is designed to be easily customizable for different sports. The color scheme can also be adjusted to reflect team or university colors.
 
+The athlete would be given the admin username and password in order to create camps and access the lists of users and campers who sign up for the different camps.
+
 The home page has a summary promoting the camp's objectives and a list of the locations and dates of upcoming camps. The user may enter the shop but must sign up or login to navigate off the home page for any other purpose.
 
-Once the user has logged in, the list of available camps is shown with a registration button. When the user clicks on Register, the Registration Form is brought up. Once the form is filled out, the waiver form is brought up. Once the waiver form is signed, the user will be brought to the shop to complete the purchase.
+A visitor to the site has the opportunity to sign up and is greeted by the logged in page that has the list of camps with the register buttons. There is also a short video that showcases the athlete.
+
+When the user clicks on Register, the Registration Form is brought up. Once the form is filled out, the waiver form is brought up. Once the waiver form is signed, the user will be brought to the shop to complete the purchase.
 
 
 ## Issues
