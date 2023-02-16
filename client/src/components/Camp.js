@@ -10,13 +10,14 @@ import "./Camp.css"
 export default function Camp() {
 
     const { data } = useQuery(QUERY_CAMPS);
-    console.log(data);
+    // console.log(data);
 
     const [showModal, setShowModal] = useState(false)
 
     return (
         <div id="camps-carousel" className="carousel slide" data-bs-ride="carousel" data-bs-interval = "false">
         <div className="carousel-inner">
+            
           {data && data.camps.map((camp, index) => (
             <div
               key={camp._id}
@@ -32,7 +33,7 @@ export default function Camp() {
                     <div>
                       <button onClick={() => setShowModal(true)}>Register</button>
                       <FormModal showModal={showModal} setShowModal={setShowModal}>
-                        <RegistrationForm />
+                        <RegistrationForm campId={camp._id}/>
                       </FormModal>
                     </div>
                   ) : null}
@@ -62,3 +63,4 @@ export default function Camp() {
       </div>
     );
 }
+

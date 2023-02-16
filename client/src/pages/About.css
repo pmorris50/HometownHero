@@ -12,8 +12,30 @@
 .list-group .list-group-item {
     border-radius: 20px;
     margin-bottom: 5px;
+    font-size: 26px;
+    background-color: #fff;
 }
 
 .staffDescription {
     font-size: 30px;
+    background-color: #fff;
+    padding: 10px 10px 10px;
+    border-radius: 25px;
+    line-height: 60px;
+}
+
+.aboutInfo {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 35px;
+}
+
+.aboutTitle {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.skills,
+.staff {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 40px;
+    line-height: 70px;
 }

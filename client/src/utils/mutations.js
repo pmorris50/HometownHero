@@ -92,8 +92,7 @@ export const MUTATION_ADD_CAMPER = gql`
       tshirtSize
       emergencyContact {
         _id
-        firstName
-        lastName
+        fullName
         phoneNumber1
         phoneNumber2
       }
@@ -104,20 +103,17 @@ export const MUTATION_ADD_CAMPER = gql`
 
 export const MUTATION_ADD_EMERGENCY = gql`
   mutation AddEmergency(
-    $firstName: String
-    $lastName: String
+    $fullName: String
     $phoneNumber1: String
     $phoneNumber2: String
   ) {
     addEmergency(
-      firstName: $firstName
-      lastName: $lastName
+      fullName: $fullName
       phoneNumber1: $phoneNumber1
       phoneNumber2: $phoneNumber2
     ) {
       _id
-      firstName
-      lastName
+      fullName
       phoneNumber1
       phoneNumber2
     }

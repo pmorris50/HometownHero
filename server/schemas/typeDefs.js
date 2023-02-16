@@ -43,8 +43,7 @@ const typeDefs = gql`
 
   type Emergency {
     _id: ID
-    firstName: String
-    lastName: String
+    fullName: String
     phoneNumber1: String
     phoneNumber2: String
   }
@@ -101,19 +100,18 @@ const typeDefs = gql`
     addCamper(
       firstName: String!
       lastName: String!
-      age: Int!
-      gradeFinished: Int!
+      age: String!
+      gradeFinished: String!
       tshirtSize: String!
       emergencyContact: [ID]
       waiverSigned: Boolean
       campId: ID
     ): Camper
     addEmergency(
-      firstName: String!
-      lastName: String!
-      phoneNumber1: String!
-      phoneNumber2: String!
-      camperId: ID!
+      fullName: String
+      phoneNumber1: String
+      phoneNumber2: String
+      camperId: ID
     ): Emergency
     addOrder(products: [ID]!): Order
     # addUser(
