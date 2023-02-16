@@ -19,13 +19,6 @@ const Waiver = ({ camperFirstName, camperLastName }) => {
 
   const [addEmergency, { error, data }] = useMutation(MUTATION_ADD_EMERGENCY);
 
-  // function FullNameSplit(e) {
-  //   const fullNameArray = fullName.split(' ');
-  //   setFullName(e);
-  //   setFirstName(fullNameArray[0]);
-  //   setLastName(fullNameArray[1]);
-  // }
-
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
