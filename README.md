@@ -39,7 +39,7 @@ Images sourced from https://unsplash.com
 This project was created by Valentina Guevara, Patrick Morris, Ben Yomtov and Jung Dettelback.
 
 Contact us at:
-    [jdettelback@gmail.com](mailto:jdettelback@gmail.com) if you have any questions.  
+    [Patrickmorris532@gmail](mailto:Patrickmorris532@gmail.com) if you have any questions.  
 
 You can see more of our work at:
     <https://github.com/pmorris50>
@@ -52,10 +52,6 @@ You can see more of our work at:
   
   ![screenshot](https://raw.githubusercontent.com/NyqEvo/travel-blog/main/public/images/screenshottravelblog2.png)
   
-  ![screenshot](https://raw.githubusercontent.com/NyqEvo/travel-blog/main/public/images/screenshottravelblog3.png)
-  
-  ![screenshot](https://raw.githubusercontent.com/NyqEvo/travel-blog/main/public/images/screenshottravelblog4.png)
-  
-Link to deployed website:
+  Link to deployed website:
 
-https://travel-blog-jung.herokuapp.com/
+https://hometown-hero.herokuapp.com/
