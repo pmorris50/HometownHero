@@ -4,11 +4,11 @@ import { Provider } from "react-redux";
 
 export const CartContext = createContext({
   items: [],
-  getProductQuantity: () => {},
-  addOne: () => {},
-  removeOne: () => {},
-  clearFromCart: () => {},
-  getTotalCost: () => {},
+  getProductQuantity: () => { },
+  addOne: () => { },
+  removeOne: () => { },
+  clearFromCart: () => { },
+  getTotalCost: () => { },
 });
 
 export default function CartProvider({ children }) {
