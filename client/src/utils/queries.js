@@ -52,12 +52,12 @@ export const QUERY_CAMPS = gql`
       location
       title
       price
-      campers {
-        _id
-        firstName
-        lastName
-        age
-      }
+      # campers {
+      #   _id
+      #   firstName
+      #   lastName
+      #   age
+      # }
     }
   }
 `;

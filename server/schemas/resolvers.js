@@ -203,11 +203,10 @@ const resolvers = {
 
     addEmergency: async (
       parent,
-      { firstName, lastName, phoneNumber1, phoneNumber2, camperId }
+      { fullName, phoneNumber1, phoneNumber2, camperId }
     ) => {
       const emergency = await Emergency.create({
-        firstName,
-        lastName,
+        fullName,
         phoneNumber1,
         phoneNumber2,
         camperId,

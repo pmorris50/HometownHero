@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom'
 import Auth from '../utils/auth';
+import './Header.css';
 
 const Navbar = () => {
     const styles = {
         customHeader:
         {
-            height: '80px',
+            height: '100px',
             background: '#FFB612',
         },
         title: {
-            color: "#203731"
+            color: "#203731",
         }
 
     }
@@ -26,7 +27,7 @@ const Navbar = () => {
         <div>
             <nav className="navbar navbar-expand-lg navbar-light" style={styles.customHeader}>
                 <div className="container-fluid">
-                    <h1 style={styles.title}>Hometown Hero</h1>
+                    <h1 style={styles.title} className="appTitle">Hometown Hero</h1>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

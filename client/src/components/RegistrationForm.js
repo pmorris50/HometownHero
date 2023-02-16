@@ -6,7 +6,8 @@ import FormModal from './FormModal';
 
 import Waiver from './Waiver'; 
 
-const RegistrationForm = () => {
+const RegistrationForm = ({ campId }) => {
+  console.log(campId);
 
   const styles = {
     header: {

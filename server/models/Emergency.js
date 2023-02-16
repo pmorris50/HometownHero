@@ -3,14 +3,14 @@ const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
 
 const emergencySchema = new Schema ({
-    firstName: {
+    fullName: {
         type: String,
-        trim: true
+        // trim: true
     },
-    lastName: {
-        type: String,
-        trim: true
-    },
+    // lastName: {
+    //     type: String,
+    //     trim: true
+    // },
     phoneNumber1: {
         type: String,
         validate: {
