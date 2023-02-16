@@ -1,10 +1,10 @@
 import { Button, Container, Navbar, Modal } from "react-bootstrap";
 import { useState, useContext } from "react";
-import { contextValue, children } from "./CartProvider";
+import { contextValue, children, CartContext } from "./CartProvider";
 import CartProduct from "./CartProduct";
 
 function ShopNavComponent() {
-  const cart = useContext({children});
+  const cart = useContext(CartContext);
   console.log(cart);
 
   const [show, setShow] = useState(false);
