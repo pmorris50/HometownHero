@@ -48,6 +48,7 @@ const About = () => {
               </div>
               <h1 className="text-center pt-4 schedule">Camp Schedule</h1>
               <Camp />
+              
             </div>
           </main>
         )}
