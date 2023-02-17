@@ -2,6 +2,7 @@ import { Card, Button, Form, Row, Col } from "react-bootstrap";
 import { CartContext } from "./CartContext";
 import CartProduct from "./CartProduct";
 import { useContext } from "react";
+import './ProductCard.css';
 
 function ProductCard(props) {
   const product = props.product;
@@ -44,7 +45,8 @@ function ProductCard(props) {
             Remove All from Cart
           </Button>
         </>
-        
+
+        <Card.Img src={product.image} className="image"/>
       </Card.Body>
     </Card>
   );
