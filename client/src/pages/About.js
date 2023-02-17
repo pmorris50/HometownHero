@@ -12,21 +12,17 @@ const About = () => {
     <div>
       {Auth.loggedIn() ? (
         <div>
-          {/* <img src="../images/football.jpg" alt="football" className="img" /> */}
           <div className="mb-4">
             <h1 className="pt-5 text-center aboutTitle">Premier Youth Football Camp</h1>
             <p className="text-center pb-5 aboutInfo">Check out our schedule below and register for a camp today!</p>
           </div>
           <Camp />
-
-
         </div>
 
       )
         :
         (
           <main className="flex-row justify-center">
-            {/* <img src="../images/football.jpg" alt="football" className="img" /> */}
             <div className="mb-4">
               <h1 className="pt-5 text-center aboutTitle">Premier Youth Football Camp</h1>
               <p className="text-center pb-5 aboutInfo">Come train with your hometown hero! Our website makes it easy to register today for a single day football training camp with your hometown athlete heros!</p>
@@ -58,10 +54,3 @@ const About = () => {
 
 export default About;
 
-// export default function About() {
-//   return (
-//     <div>
-//       <h1>About</h1>
-//     </div>
-//   );
-// }

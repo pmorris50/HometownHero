@@ -1,9 +1,8 @@
-import { Button, Container, Navbar, Modal } from "react-bootstrap";
+import { Button, Navbar, Modal } from "react-bootstrap";
 import { useState, useContext } from "react";
-import CartProvider, { CartContext } from "./CartContext";
+import { CartContext } from "./CartContext";
 import CartProduct from "./CartProduct";
 import { BsCart3 } from 'react-icons/bs';
-
 
 function ShopNavComponent() {
   const cart = useContext(CartContext);
@@ -26,15 +25,12 @@ function ShopNavComponent() {
       if (response.url) {
         window.location.assign(response.url)
     }});
-  
   };
 
   const productsCount = cart.items.reduce(
     (sum, product) => sum + product.quantity,
     0
   );
-
-  
 
   return (
     <>
