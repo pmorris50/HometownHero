@@ -36,7 +36,7 @@ import Cancel from "./Cancel";
 
 import ShopNavComponent from "../components/ShopNav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CartProvider from "../CartContext";
+import CartProvider from "../components/CartContext";
 
 
 const Shop = () => {

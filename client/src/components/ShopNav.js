@@ -1,6 +1,6 @@
 import { Button, Container, Navbar, Modal } from "react-bootstrap";
 import { useState, useContext } from "react";
-import CartProvider, { CartContext } from "./CartProvider";
+import CartProvider, { CartContext } from "./CartContext";
 import CartProduct from "./CartProduct";
 
 function ShopNavComponent() {
