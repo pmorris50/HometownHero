@@ -54,15 +54,15 @@ You can see more of our work at:
     <https://github.com/benyomtov>
     <https://github.com/jdettelback>
 
-  ![screenshot](https://raw.githubusercontent.com/pmorris50/HometownHero/main/public/images/hometownhero.png)
-  ![screenshot](https://raw.githubusercontent.com/pmorris50/HometownHero/main/public/images/hometownhero2.png)
-  ![screenshot](https://raw.githubusercontent.com/pmorris50/HometownHero/main/public/images/hometownhero3.png)
-  ![screenshot](https://raw.githubusercontent.com/pmorris50/HometownHero/main/public/images/hometownhero4.png)
-  ![screenshot](https://raw.githubusercontent.com/pmorris50/HometownHero/main/public/images/hometownhero5.png)
-  ![screenshot](https://raw.githubusercontent.com/pmorris50/HometownHero/main/public/images/hometownhero6.png)
-  ![screenshot](https://raw.githubusercontent.com/pmorris50/HometownHero/main/public/images/hometownhero7.png)
-  ![screenshot](https://raw.githubusercontent.com/pmorris50/HometownHero/main/public/images/hometownhero8.png)
-  ![screenshot](https://raw.githubusercontent.com/pmorris50/HometownHero/main/public/images/hometownhero9.png)
+  ![screenshot](https://raw.githubusercontent.com/pmorris50/HometownHero/main/client/public/images/hometownhero.png)
+  ![screenshot](https://raw.githubusercontent.com/pmorris50/HometownHero/main/client/public/images/hometownhero2.png)
+  ![screenshot](https://raw.githubusercontent.com/pmorris50/HometownHero/main/client/public/images/hometownhero3.png)
+  ![screenshot](https://raw.githubusercontent.com/pmorris50/HometownHero/main/client/public/images/hometownhero4.png)
+  ![screenshot](https://raw.githubusercontent.com/pmorris50/HometownHero/main/client/public/images/hometownhero5.png)
+  ![screenshot](https://raw.githubusercontent.com/pmorris50/HometownHero/main/client/public/images/hometownhero6.png)
+  ![screenshot](https://raw.githubusercontent.com/pmorris50/HometownHero/main/client/public/images/hometownhero7.png)
+  ![screenshot](https://raw.githubusercontent.com/pmorris50/HometownHero/main/client/public/images/hometownhero8.png)
+  ![screenshot](https://raw.githubusercontent.com/pmorris50/HometownHero/main/client/public/images/hometownhero9.png)
   
   Link to deployed website:
 
