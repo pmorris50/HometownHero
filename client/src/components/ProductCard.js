@@ -2,7 +2,9 @@ import { Card, Button, Form, Row, Col } from "react-bootstrap";
 import { CartContext } from "./CartContext";
 import CartProduct from "./CartProduct";
 import { useContext } from "react";
+import './ProductCard.css';
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
+
 
 function ProductCard(props) {
   const product = props.product;
@@ -68,7 +70,8 @@ function ProductCard(props) {
 
           
         </>
-        
+
+        <Card.Img src={product.image} className="image"/>
       </Card.Body>
     </Card>
   );
