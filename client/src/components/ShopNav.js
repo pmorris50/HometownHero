@@ -2,6 +2,8 @@ import { Button, Container, Navbar, Modal } from "react-bootstrap";
 import { useState, useContext } from "react";
 import CartProvider, { CartContext } from "./CartContext";
 import CartProduct from "./CartProduct";
+import { BsCart3 } from 'react-icons/bs';
+
 
 function ShopNavComponent() {
   const cart = useContext(CartContext);
@@ -32,13 +34,15 @@ function ShopNavComponent() {
     0
   );
 
+  
+
   return (
     <>
       <Navbar expand="sm">
-        <Navbar.Brand href="/">Hometown Hero</Navbar.Brand>
+        <Navbar.Brand href="/"></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-          <Button onClick={handleShow}>Cart ({productsCount} Items)</Button>
+          <Button style={{ backgroundColor: "#FFB612", color: "#203731", border: " 3px solid #203731", borderRadius: "20px", marginTop: "20px", marginBottom: "0px"}} onClick={handleShow}><BsCart3 style={{ fontSize: "28px" }}/> ({productsCount} Items)</Button>
         </Navbar.Collapse>
       </Navbar>
       <Modal show={show} onHide={handleClose}>
