@@ -4,7 +4,6 @@ import { QUERY_CAMPS } from '../utils/queries';
 import RegistrationForm from '../components/RegistrationForm'
 import Auth from '../utils/auth';
 import FormModal from './FormModal';
-import Waiver from './Waiver';
 import "./Camp.css"
 import '../pages/Signup.css';
 

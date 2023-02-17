@@ -1,14 +1,8 @@
 import React, { useState } from "react";
-import FormModal from './FormModal'
-
 import '../pages/Signup.css';
-
 import { useMutation } from '@apollo/client';
 import { MUTATION_ADD_EMERGENCY } from "../utils/mutations";
 import { Navigate, useNavigate } from "react-router-dom";
-
-
-
 
 const Waiver = ({ camperFirstName, camperLastName }) => {
   const [showModal, setShowModal] = useState(false)

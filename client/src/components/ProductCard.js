@@ -1,6 +1,5 @@
 import { Card, Button, Form, Row, Col } from "react-bootstrap";
 import { CartContext } from "./CartContext";
-import CartProduct from "./CartProduct";
 import { useContext } from "react";
 import './ProductCard.css';
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";

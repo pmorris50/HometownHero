@@ -24,6 +24,7 @@ const campSchema = new Schema ({
         }
     ]
 })
+
 const Camp = mongoose.model('camp', campSchema);
   
 module.exports = Camp;
