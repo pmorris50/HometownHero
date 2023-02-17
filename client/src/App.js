@@ -24,7 +24,7 @@ import Cancel from "./pages/Cancel";
 import Success from "./pages/Success";
 import ShopNav from "./components/ShopNav";
 import { Container } from "react-bootstrap";
-import CartProvider from "./CartContext";
+import {CartProvider} from "./components/CartContext";
 import Admin from "./pages/Admin";
 
 // Construct our main GraphQL API endpoint

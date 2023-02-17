@@ -4,14 +4,14 @@ import { Provider } from "react-redux";
 
 export const CartContext = createContext({
   items: [],
-  getProductQuantity: () => { },
-  addOne: () => { },
-  removeOne: () => { },
-  clearFromCart: () => { },
-  getTotalCost: () => { },
+  getProductQuantity: () => {},
+  addOne: () => {},
+  removeOne: () => {},
+  clearFromCart: () => {},
+  getTotalCost: () => {},
 });
 
-export default function CartProvider({ children }) {
+export function CartProvider({ children }) {
   const [cartProducts, setCartProducts] = useState([]);
 
   const contextValue = {
@@ -85,6 +85,8 @@ export default function CartProvider({ children }) {
     <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
   );
 }
+
+export default CartProvider;
 
 // function getProductQuantity(id) {
 //     const item = items.find((item) => item.id === id);

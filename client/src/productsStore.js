@@ -1,13 +1,15 @@
 const productsArray = [
     {
-      name: 'Baseball Cap',
+      id: 1,
+      name: 'Registration Fee',
       description:
-        'Baseball Cap with camp logo.',
+        'Camp Registration',
       image: '#',
-      price: 12.99,
+      price: 50,
       quantity: 20
     },
     {
+      id: 2,
       name: 'Sweatshirt',
       description:
         'Sweatshirt with camp logo.',
@@ -16,6 +18,7 @@ const productsArray = [
       quantity: 20
     },
     {
+      id: 3,
       name: 'Long Sleeve Shirt',
       description:
         'Long-sleeve shirt with camp logo.',
@@ -24,6 +27,7 @@ const productsArray = [
       quantity: 20
     },
     {
+      id: 4,
       name: 'Mouthguard',
       description:
         'Mouthguard protection.',
@@ -31,10 +35,19 @@ const productsArray = [
       price: 3.99,
       quantity: 20
     },
+    {
+      id: 5,
+      name: 'Baseball Cap',
+      description:
+        'Baseball Cap with camp logo.',
+      image: '#',
+      price: 12.99,
+      quantity: 20
+    },
   ]
 
   function getProductData(id) {
-    let productData = productsArray.find(product => product._id === id);
+    let productData = productsArray.find(product => product.id === id);
 
     if (productData == undefined) {
       console.log("This product does not exist")
