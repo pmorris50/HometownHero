@@ -6,9 +6,10 @@ import { useContext } from "react";
 function ProductCard(props) {
   const product = props.product;
   const cart = useContext(CartContext);
-  console.log(cart);
+  console.log(props);
   const productQuantity = cart.getProductQuantity(product.id);
   console.log(cart.items);
+  console.log(productQuantity)
 
 
   return (
