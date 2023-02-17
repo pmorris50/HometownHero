@@ -4,7 +4,6 @@ import { CartContext } from "./CartContext";
 import CartProduct from "./CartProduct";
 import { BsCart3 } from 'react-icons/bs';
 
-
 function ShopNavComponent() {
   const cart = useContext(CartContext);
   console.log(cart);
@@ -26,15 +25,12 @@ function ShopNavComponent() {
       if (response.url) {
         window.location.assign(response.url)
     }});
-  
   };
 
   const productsCount = cart.items.reduce(
     (sum, product) => sum + product.quantity,
     0
   );
-
-  
 
   return (
     <>
