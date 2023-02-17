@@ -36,7 +36,7 @@ import Cancel from "./Cancel";
 
 import ShopNavComponent from "../components/ShopNav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CartProvider from "../CartContext";
+import CartProvider from "../components/CartContext";
 
 
 const Shop = () => {
@@ -44,13 +44,13 @@ const Shop = () => {
     <CartProvider>
       <div className="container">
         <ShopNavComponent/>
-          <BrowserRouter>
-          <Routes>
+            {/* <BrowserRouter*/}
+          <Routes> 
             <Route index element={<Store />} />
             <Route path="success" element={<Success />} />
             <Route path="cancel" element={<Cancel />} />
-            </Routes>
-          </BrowserRouter>
+           </Routes>
+         {/* { </BrowserRouter> */} 
       </div>
     </CartProvider>
   );

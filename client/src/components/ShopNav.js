@@ -1,6 +1,6 @@
 import { Button, Container, Navbar, Modal } from "react-bootstrap";
 import { useState, useContext } from "react";
-import CartProvider, { CartContext } from "./CartProvider";
+import CartProvider, { CartContext } from "./CartContext";
 import CartProduct from "./CartProduct";
 
 function ShopNavComponent() {
@@ -11,8 +11,26 @@ function ShopNavComponent() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const checkout = async () => {
+    await fetch("http://localhost:3000/checkout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ items: cart.items }),
+    }) .then((response) => {return response.json();
+  })
+    .then((response) => {
+      if (response.url) {
+        window.location.assign(response.url)
+    }});
+  
+  };
+
   const productsCount = cart.items.reduce(
-    (sum, product) => sum + product.quantity, 0);
+    (sum, product) => sum + product.quantity,
+    0
+  );
 
   return (
     <>
@@ -39,7 +57,7 @@ function ShopNavComponent() {
                 ></CartProduct>
               ))}
               <h1>Total: {cart.getTotalCost().toFixed(2)}</h1>
-              <Button variant="success" onClick={handleClose}>
+              <Button variant="success" onClick={checkout}>
                 Purchase
               </Button>
             </>
@@ -48,7 +66,6 @@ function ShopNavComponent() {
               <h1>Cart is empty</h1>
             </>
           )}
-          <h1>Contents</h1>
         </Modal.Body>
       </Modal>
     </>
