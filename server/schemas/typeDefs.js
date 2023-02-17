@@ -92,10 +92,10 @@ const typeDefs = gql`
     ): Auth
     login(email: String!, password: String!): Auth
     addCamp(
-      title: String!
-      location: String!
-      date: String!
-      price: Float!
+      title: String
+      location: String
+      date: String
+      price: String
     ): Camp
     addCamper(
       firstName: String!

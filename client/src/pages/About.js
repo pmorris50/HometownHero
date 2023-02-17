@@ -18,6 +18,8 @@ const About = () => {
             <p className="text-center pb-5 aboutInfo">Check out our schedule below and register for a camp today!</p>
           </div>
           <Camp />
+
+
         </div>
 
       )
