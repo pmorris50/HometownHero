@@ -15,6 +15,8 @@ const server = new ApolloServer({
   context: authMiddleware,
 });
 
+var cors = require('cors');
+
 const stripe = require('stripe')('sk_test_51McA81AoWLJeiXgFmzKYRz2mpbQ7QtU0cJXQqqVA1RexaxhhBXvXCnXhmFSiXCi4zQPRk4hMlMECZcxdZdJTNaa000vlSHDcOF')
 
 app.use(express.urlencoded({ extended: false }));
@@ -28,32 +30,32 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
-// app.post("/checkout", async (req, res) => {
+app.post("/checkout", async (req, res) => {
   
-//   console.log(req.body);
-//   const items = req.body.items;
+  console.log(req.body);
+  const items = req.body.items;
 
-//   let lineItems = [];
-//   items.forEach((item) => {
-//     lineItems.push({
-//       price: item.id,
-//       quantity: item.quantity,
-//     });
-//   });
+  let lineItems = [];
+  items.forEach((item) => {
+    lineItems.push({
+      price: item.id,
+      quantity: item.quantity,
+    });
+  });
 
-//   const session = await stripe.checkout.sessions.create({
-//     line_items: lineItems,
-//     mode: "payment",
-//     success_url: "http://localhost:3000/success",
-//     cancel_url: "http://localhost:3000/cancel",
-//   });
+  const session = await stripe.checkout.sessions.create({
+    line_items: lineItems,
+    mode: "payment",
+    success_url: "http://localhost:3000/success",
+    cancel_url: "http://localhost:3000/cancel",
+  });
 
-//   res.send(
-//     JSON.stringify({
-//       url: session.url,
-//     })
-//   );
-// });
+  res.send(
+    JSON.stringify({
+      url: session.url,
+    })
+  );
+});
 
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async (typeDefs, resolvers) => {
