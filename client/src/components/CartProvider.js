@@ -1,6 +1,5 @@
 import { createContext, useState } from "react";
 import { productsArray, getProductData } from "../productsStore";
-import { Provider } from "react-redux";
 
 export const CartContext = createContext({
   items: [],
@@ -87,14 +86,14 @@ export default function CartProvider({ children }) {
 }
 
 // function getProductQuantity(id) {
-//     const item = items.find((item) => item.id === id);
-//     return item ? item.quantity : 0;
+//     const quantity = cartProducts.find((product) => product.id === id);
+//     return product ? product.quantity : 0;
 // }
 
 // function addOne(id) {
-//     const item = items.find((item) => item.id === id);
-//     if (item) {
-//         item.quantity++;
+//     const quantity = product.find((product) => product.id === id);
+//     if (product) {
+//         product.quantity++;
 //     } else {
 //         const product = productsArray.find((product) => product.id === id);
 //         setItems([...items, { ...product, quantity: 1 }]);
@@ -102,10 +101,10 @@ export default function CartProvider({ children }) {
 // }
 
 // function removeOne(id) {
-//     const item = items.find((item) => item.id === id);
-//     if (item) {
-//         if (item.quantity > 1) {
-//             item.quantity--;
+//     const quantity = product.find((item) => product.id === id);
+//     if (product) {
+//         if (product.quantity > 1) {
+//             product.quantity--;
 //         } else {
 //             clearFromCart(id);
 //         }
@@ -113,9 +112,6 @@ export default function CartProvider({ children }) {
 // }
 
 // function clearFromCart(id) {
-//     setItems(items.filter((item) => item.id !== id));
+//     setCartProducts(cartProducts.filter((Products) => product.id !== id));
 // }
 
-// function getTotalCost() {
-//     return items.reduce((acc, item) => acc + item.price * item.quantity, 0);
-// }

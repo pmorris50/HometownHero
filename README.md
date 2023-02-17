@@ -19,7 +19,7 @@ Open this application using the website linked below.
 
 
 ## Technology
-This application uses a React front end. MongoDB is used to store the data and the backend uses express and node. It is deployed using Heroku.
+This application uses a React front end. MongoDB is used to store the data and the back end uses express and node. It is deployed using Heroku.
 
 
 ## Usage
